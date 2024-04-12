@@ -203,136 +203,147 @@
     <!-- End of Trainings -->
 
     <!-- Admission -->
-    <div id="admission" class="admission">
-      <div class="admission-form">
+    <section id="admission" class="admission">
+      <div class="admission-container">
         <div class="admission-title">Admission Form</div>
-        <div class="input full-name">
-          <label for="full-name" class="input-label">Your Name</label>
-          <div class="input-item">
-            <i class="fa fa-user" id="icon"></i>
-            <input
-              type="text"
-              name="full-name"
-              id="full-name"
-              placeholder="Enter full name"
-              class="input"
-            />
+        <div class="admission-form">
+          <div class="input full-name">
+            <label for="full-name" class="input-label">Your Name</label>
+            <div class="input-item">
+              <i class="fa fa-user" id="icon"></i>
+              <input
+                type="text"
+                name="full-name"
+                id="full-name"
+                placeholder="Enter full name"
+                class="input"
+              />
+              <span class="name-error"></span>
+            </div>
+          </div>
+
+          <div class="input">
+            <label for="email-address" class="input-label">Email Address</label>
+            <div class="input-item">
+              <i class="fa fa-envelope" id="icon"></i>
+              <input
+                type="email"
+                name="email-address"
+                id="email-address"
+                placeholder="Enter your email"
+                class="input"
+              />
+              <span class="email-error"></span>
+            </div>
+          </div>
+
+          <div class="input">
+            <label for="phone" class="input-label">Phone</label>
+            <div class="input-item">
+              <i class="fa fa-phone-square" id="icon"></i>
+              <input
+                type="number"
+                name="phone"
+                id="phone"
+                placeholder="Enter your phone number"
+                class="input"
+              />
+              <span class="phone-error"></span>
+            </div>
+          </div>
+
+          <div class="input gender">
+            <label for="gender" class="input-label">Gender</label>
+            <div class="input-item">
+              <label for="female"
+                ><input type="radio" name="gender" id="female" />Female</label
+              >
+              <label for="male"
+                ><input type="radio" name="gender" id="male" />Male</label
+              >
+              <span class="gender-error"></span>
+            </div>
+          </div>
+
+          <div class="input">
+            <label for="course" class="input-label">Course</label>
+            <div class="input-item">
+              <select name="course" id="course" class="input">
+                <option value="select" disabled selected>Select Course</option>
+                <option value="fullstack">Full Stack Development</option>
+                <option value="ui-ux">UI/UX Web Design Mobile Design</option>
+                <option value="tester">Software Tester</option>
+                <option value="graphic">Graphic Design</option>
+                <option value="webdesign">
+                  Web & Graphic Design for Teenagers
+                </option>
+                <option value="Marketing">Digital Marketing</option>
+              </select>
+              <span class="course-error"></span>
+            </div>
+          </div>
+
+          <div class="input">
+            <label for="knowledge" class="input-label">Coding knowledge</label>
+            <div class="input-item coding">
+              <label for="java"
+                ><input type="checkbox" name="java" id="java" />Java</label
+              >
+              <label for="net"
+                ><input type="checkbox" name="net" id="net" />.Net</label
+              >
+              <label for="javascript"
+                ><input
+                  type="checkbox"
+                  name="javascript"
+                  id="javascript"
+                />JavaScript
+              </label>
+
+              <label for="react"
+                ><input type="checkbox" name="react" id="react" />React</label
+              >
+              <span class="knowledge"></span>
+            </div>
+          </div>
+
+          <div class="input">
+            <label for="password" class="input-label">Password</label>
+            <div class="input-item">
+              <i class="fa fa-key" id="icon"></i>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="input"
+              />
+              <span class="pass-error"></span>
+            </div>
+          </div>
+
+          <div class="input">
+            <label for="password" class="input-label">Confirm Password</label>
+            <div class="input-item">
+              <i class="fa fa-key" id="icon"></i>
+              <input
+                type="password"
+                name="confirm-password"
+                id="confirm-password"
+                class="input"
+              />
+              <span class="conf-pass-error"></span>
+            </div>
+          </div>
+
+          <div class="buttons">
+            <button type="submit" class="register" onclick="register()">
+              Register
+            </button>
+            <button type="reset" class="clear" onclick="clear()">Clear</button>
           </div>
         </div>
-
-        <div class="input">
-          <label for="email-address" class="input-label">Email Address</label>
-          <div class="input-item">
-            <i class="fa fa-envelope" id="icon"></i>
-            <input
-              type="email"
-              name="email-address"
-              id="email-address"
-              placeholder="Enter your email"
-              class="input"
-            />
-          </div>
-        </div>
-
-        <div class="input">
-          <label for="email" class="input-label">Phone</label>
-          <div class="input-item">
-            <i class="fa fa-phone-square" id="icon"></i>
-            <input
-              type="number"
-              name="phone"
-              id="phone"
-              placeholder="Enter your phone number"
-              class="input"
-            />
-          </div>
-        </div>
-
-        <div class="input gender">
-          <label for="gender" class="input-label">Gender</label>
-          <div class="input-item">
-            <label for="female"
-              ><input type="radio" name="gender" id="female" />Female</label
-            >
-            <label for="male"
-              ><input type="radio" name="gender" id="male" />Male</label
-            >
-          </div>
-        </div>
-
-        <div class="input">
-          <label for="course" class="input-label">Course</label>
-          <div class="input-item">
-            <i class="fa fa-caret-square-o-down"></i>
-            <select name="course" id="course" class="input">
-              <option value="select">Select Course</option>
-              <option value="fullstack">Full Stack Development</option>
-              <option value="ui-ux">UI/UX Web Design Mobile Design</option>
-              <option value="tester">Software Tester</option>
-              <option value="graphic">Graphic Design</option>
-              <option value="webdesign">
-                Web & Graphic Design for Teenagers
-              </option>
-              <option value="Marketing">Digital Marketing</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="input">
-          <label for="knowledge" class="input-label">Coding knowledge</label>
-          <div class="input-item">
-            <label for="java"
-              ><input type="checkbox" name="java" id="java" />Java</label
-            >
-            <label for="net"
-              ><input type="checkbox" name="net" id="net" />.Net</label
-            >
-            <label for="javascript"
-              ><input
-                type="checkbox"
-                name="javascript"
-                id="javascript"
-              />JavaScript
-            </label>
-
-            <input type="checkbox" name="react" id="react" />.React
-            <label for="react"></label>
-          </div>
-        </div>
-
-        <div class="input">
-          <label for="password" class="input-label">Password</label>
-          <div class="input-item">
-            <i class="fa fa-key" id="icon"></i>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              class="input"
-            />
-          </div>
-        </div>
-
-        <div class="input">
-          <label for="password" class="input-label">Confirm Password</label>
-          <div class="input-item">
-            <i class="fa fa-key" id="icon"></i>
-            <input
-              type="password"
-              name="confirm-password"
-              id="confirm-password"
-              class="input"
-            />
-          </div>
-        </div>
-
-        <div class="buttons">
-          <button type="submit">Register</button>
-          <button type="reset">Clear</button>
-        </div>
-        <a href="#" class="admission-close">&times;</a>
       </div>
-    </div>
+    </section>
 
     <!-- End of Admission -->
 

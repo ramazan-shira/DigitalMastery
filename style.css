@@ -311,40 +311,26 @@ body {
 
 /* Admissions */
 .admission {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  top: 100px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: all 0.4s;
+  margin: 70px 150px;
 }
 
-.admission:target {
-  visibility: visible;
-  opacity: 1;
+.admission-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  max-width: 90%;
+  padding: 30px;
+  transition: all 0.4s;
+  border-radius: 4px;
 }
 
 .admission-form {
-  border-radius: 4px;
-  position: relative;
-  width: 500px;
-  max-width: 90%;
-  background: #fff;
-  padding: 30px;
-}
-
-.admission-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #585858;
-  text-decoration: none;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .admission-title {
@@ -353,6 +339,12 @@ body {
   color: #274c77;
   text-align: center;
   margin: 20px 0;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .input-item .input {
@@ -365,28 +357,102 @@ body {
   transition: 0.5s ease;
   padding-left: 50px;
   font-size: 16px;
-  margin-bottom: 20px;
 }
 
 .input-item .input:focus {
   border-color: #3e2093;
 }
 
-.input-item {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-}
-
 .input-label {
   font-size: 18px;
-  margin-bottom: 15px;
+  font-weight: 600;
 }
 
 #icon {
   position: absolute;
   margin-left: 20px;
+  margin-top: 13px;
+}
+
+.gender .input-item label {
+  font-size: 18px;
+}
+
+.gender .input-item label input[type="radio"] {
+  width: 15px;
+  height: 15px;
+}
+
+.gender .input-item {
+  display: flex;
+  gap: 20px;
+}
+
+.input .input-item select {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  border: 2px solid #f1f1f1;
+  padding: 10px 20px;
+  transition: 0.5s ease;
+  font-size: 16px;
+}
+
+.input .coding {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.input .coding label {
+  font-size: 16px;
+}
+
+.input .coding input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+}
+
+.buttons .register {
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #457b9d;
+  color: white;
+  border: 2px solid white;
+}
+
+.buttons .register:hover {
+  cursor: pointer;
+  background-color: #1d3557;
+}
+
+.buttons .clear {
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+
+  background-color: #f4acb7;
+  color: #ffe5d9;
+  border: 2px solid white;
+}
+
+.buttons .clear:hover {
+  cursor: pointer;
+  background-color: #9d8189;
+}
+
+.input .input-item span {
+  font-size: 14px;
+  color: red;
 }
 
 /* Instructors */
