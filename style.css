@@ -60,7 +60,7 @@ body {
 
 /* Main page style */
 .main-page {
-  background-image: url("./Assets/main-page.jpg");
+  background-image: url("./Assets/Images/main-page.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -216,41 +216,39 @@ body {
   align-items: flex-start;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-
   padding: 50px 0;
 }
 .ag-courses_item {
   -ms-flex-preferred-size: calc(33.33333% - 30px);
   flex-basis: calc(33.33333% - 30px);
-
   margin: 0 15px 30px;
-
   overflow: hidden;
-
   border-radius: 28px;
 }
+
 .ag-courses-item_link {
   display: block;
   padding: 30px 20px;
   background-color: #4e7d86;
-
   overflow: hidden;
-
   position: relative;
 }
+
 .ag-courses-item_link:hover,
 .ag-courses-item_link:hover .ag-courses-item_date {
   text-decoration: none;
   color: #fff;
 }
+
 .ag-courses-item_link:hover .ag-courses-item_bg {
   -webkit-transform: scale(10);
   -ms-transform: scale(10);
   transform: scale(10);
 }
+
 .ag-courses-item_title {
   min-height: 87px;
-  margin: 0 0 25px;
+  margin-bottom: 15px;
   overflow: hidden;
   font-weight: bold;
   font-size: 30px;
@@ -258,12 +256,21 @@ body {
   z-index: 2;
   position: relative;
 }
+
+.ag-course-item_price {
+  font-size: 28px;
+  color: #caf0f8;
+  position: relative;
+  margin-bottom: 20px;
+}
+
 .ag-courses-item_date-box {
   font-size: 18px;
   color: #fff;
   z-index: 2;
   position: relative;
 }
+
 .ag-courses-item_date {
   font-weight: bold;
   color: #f9b234;
@@ -271,6 +278,7 @@ body {
   -o-transition: color 0.5s ease;
   transition: color 0.5s ease;
 }
+
 .ag-courses-item_bg {
   height: 128px;
   width: 128px;
@@ -284,6 +292,7 @@ body {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+
 .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
   background-color: #3ecd5e;
 }
@@ -298,6 +307,86 @@ body {
 }
 .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
   background-color: #4c49ea;
+}
+
+/* Admissions */
+.admission {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.4s;
+}
+
+.admission:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.admission-form {
+  border-radius: 4px;
+  position: relative;
+  width: 500px;
+  max-width: 90%;
+  background: #fff;
+  padding: 30px;
+}
+
+.admission-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #585858;
+  text-decoration: none;
+}
+
+.admission-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #274c77;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.input-item .input {
+  width: 100%;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  border: 2px solid #f1f1f1;
+  padding: 10px 20px;
+  transition: 0.5s ease;
+  padding-left: 50px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.input-item .input:focus {
+  border-color: #3e2093;
+}
+
+.input-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.input-label {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+#icon {
+  position: absolute;
+  margin-left: 20px;
 }
 
 /* Instructors */

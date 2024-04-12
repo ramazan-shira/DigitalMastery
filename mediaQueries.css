@@ -48,6 +48,10 @@
   .ag-courses-item_title {
     font-size: 26px;
   }
+
+  .ag-course-item_price {
+    font-size: 24px;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -74,8 +78,12 @@
     padding: 10px;
   }
 
+  .ag-courses_item {
+    -ms-flex-preferred-size: calc(50% - 30px);
+    flex-basis: calc(50% - 30px);
+  }
   .ag-courses-item_title {
-    font-size: 22px;
+    font-size: 28px;
   }
 
   .instructors-cards {
@@ -102,16 +110,6 @@
 
   .footer-content {
     padding: 50px 0 30px 0;
-  }
-}
-
-@media only screen and (max-width: 979px) {
-  .ag-courses_item {
-    -ms-flex-preferred-size: calc(50% - 30px);
-    flex-basis: calc(50% - 30px);
-  }
-  .ag-courses-item_title {
-    font-size: 28px;
   }
 }
 
