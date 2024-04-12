@@ -805,7 +805,7 @@ textarea {
   align-items: center;
 }
 
-.fa {
+.social-media-icon {
   padding: 10px;
   font-size: 50px;
   text-align: center;
@@ -813,15 +813,11 @@ textarea {
   border-radius: 50%;
 }
 
-.fa:hover {
+.social-media-icon:hover {
   opacity: 0.7;
 }
 
-.fa-instagram,
-.fa-facebook,
-.fa-linkedin,
-.fa-pinterest,
-.fa-youtube-play {
+.social-media-icon {
   background: #777;
   color: white;
 }
