@@ -1,4 +1,5 @@
 // Admission form validation
+const register = () => {
 const fullName = document.getElementById("full-name").value;
 const emailAddress = document.getElementById("email-address").value;
 const phone = document.getElementById("phone").value;
@@ -29,8 +30,6 @@ const regPassLowercase = /.*[a-z].*/;
 const regPassDigit = /.*\d.*/;
 const regPassSpecialchar = /.*[!@#$%^&*()\-_=+{};:,<.>].*/;
 const regPassLength = /.{8,}/;
-
-const register = () => {
   if (fullName === "") {
     nameError.innerHTML = "Please enter your full name!";
     return;
