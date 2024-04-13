@@ -11,6 +11,14 @@
     />
     <link rel="stylesheet" href="mediaQueries.css" />
     <link rel="icon" type="image/x-icon" href="./Assets/Images/favicon.png" />
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <!-- Navigation menu -->
@@ -27,17 +35,16 @@
         <div class="tab"><a href="#contact">Contact</a></div>
       </nav>
 
-      <div class="burger-btn">
-        <img
-          src="https://cdn.icon-icons.com/icons2/2761/PNG/512/menu_hamburger_burger_icon_176431.png"
-          alt="Burger menu icon"
-        />
+      <div class="mobile_menu_toggle">
+        <button class="menu_toggle_icon">
+          <i class="fa fa-bars" style="font-size: 36px"></i>
+        </button>
       </div>
     </div>
     <!-- End of navigation menu -->
 
     <!-- Main page -->
-    <div class="main-page" id="home">
+    <section class="main-page" id="home">
       <div class="main-page-description">
         <h1>
           Jumpstart your <br />
@@ -45,11 +52,11 @@
         </h1>
         <h4>become a Software developer</h4>
       </div>
-    </div>
+    </section>
     <!-- End of Main page -->
 
     <!-- About Us -->
-    <div class="about-us" id="about">
+    <section class="about-us" id="about">
       <div class="about-container">
         <div class="about-us-content">
           <div class="about-us-title">Unleashing Potential Through Code</div>
@@ -71,7 +78,9 @@
           <img src="./Assets/Images/About/about.png" alt="Coding image" />
         </div>
       </div>
+    </section>
 
+    <section class="what-we-offer">
       <div class="offer">
         <div class="offer-title">What we offer</div>
         <div class="offer-cards">
@@ -85,6 +94,7 @@
               for learners of all levels.
             </div>
           </div>
+
           <div class="offer-card">
             <div class="offer-card-image">
               <img src="./Assets/Images/About/card-2.png" alt="Card image" />
@@ -107,11 +117,15 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- End of About us -->
 
+    <!-- Expertise -->
+    <section class="expertise"></section>
+    <!-- End of Expertise -->
+
     <!-- Trainings -->
-    <div class="trainings" id="trainings">
+    <section class="trainings" id="trainings">
       <div class="trainings-title">Trainings</div>
       <div class="ag-format-container">
         <div class="ag-courses_box">
@@ -199,7 +213,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- End of Trainings -->
 
     <!-- Admission -->
@@ -218,7 +232,7 @@
                 placeholder="Enter full name"
                 class="input"
               />
-              <span class="name-error"></span>
+              <span id="name-error"></span>
             </div>
           </div>
 
@@ -233,7 +247,7 @@
                 placeholder="Enter your email"
                 class="input"
               />
-              <span class="email-error"></span>
+              <span id="email-error"></span>
             </div>
           </div>
 
@@ -248,7 +262,7 @@
                 placeholder="Enter your phone number"
                 class="input"
               />
-              <span class="phone-error"></span>
+              <span id="phone-error"></span>
             </div>
           </div>
 
@@ -261,15 +275,17 @@
               <label for="male"
                 ><input type="radio" name="gender" id="male" />Male</label
               >
-              <span class="gender-error"></span>
             </div>
+            <span id="gender-error"></span>
           </div>
 
           <div class="input">
             <label for="course" class="input-label">Course</label>
             <div class="input-item">
               <select name="course" id="course" class="input">
-                <option value="select" disabled selected>Select Course</option>
+                <option value="select" disabled selected="selected">
+                  Select Course
+                </option>
                 <option value="fullstack">Full Stack Development</option>
                 <option value="ui-ux">UI/UX Web Design Mobile Design</option>
                 <option value="tester">Software Tester</option>
@@ -279,7 +295,7 @@
                 </option>
                 <option value="Marketing">Digital Marketing</option>
               </select>
-              <span class="course-error"></span>
+              <span id="course-error"></span>
             </div>
           </div>
 
@@ -303,8 +319,8 @@
               <label for="react"
                 ><input type="checkbox" name="react" id="react" />React</label
               >
-              <span class="knowledge"></span>
             </div>
+            <span id="knowledge-error"></span>
           </div>
 
           <div class="input">
@@ -317,7 +333,7 @@
                 id="password"
                 class="input"
               />
-              <span class="pass-error"></span>
+              <span id="pass-error"></span>
             </div>
           </div>
 
@@ -331,7 +347,7 @@
                 id="confirm-password"
                 class="input"
               />
-              <span class="conf-pass-error"></span>
+              <span id="conf-pass-error"></span>
             </div>
           </div>
 
@@ -339,16 +355,19 @@
             <button type="submit" class="register" onclick="register()">
               Register
             </button>
-            <button type="reset" class="clear" onclick="clear()">Clear</button>
+            <button class="clear" id="clear">Clear</button>
           </div>
         </div>
+      </div>
+      <div class="registered-message" id="registered-message">
+        <p class="registered" id="registered"></p>
       </div>
     </section>
 
     <!-- End of Admission -->
 
     <!-- Instructors -->
-    <div class="instructors" id="team">
+    <section class="instructors" id="team">
       <div class="instructors-title">Instructors</div>
       <div class="instructors-cards">
         <div class="instructor-card">
@@ -511,12 +530,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- End of Instructors -->
 
     <!-- Testimonials -->
 
-    <div class="testimonials">
+    <section class="testimonials">
       <div class="testimonials-title">Testimonials</div>
       <div class="reviews">
         <figure class="review-card">
@@ -569,12 +588,12 @@
           </div>
         </figure>
       </div>
-    </div>
+    </section>
 
     <!-- End of Testimonials -->
 
     <!-- Gallery -->
-    <div class="gallery" id="gallery">
+    <section class="gallery" id="gallery">
       <div class="gallery-title">Gallery</div>
       <div class="gallery-images">
         <div class="gallery-column">
@@ -606,11 +625,11 @@
           />
         </div>
       </div>
-    </div>
+    </section>
     <!-- End of Gallery -->
 
     <!-- Contact -->
-    <div class="contact" id="contact">
+    <section class="contact" id="contact">
       <div class="contact-title">Contact Us</div>
       <div class="contact-details">
         <div class="contact-form">
@@ -726,7 +745,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- End of Contact -->
 
     <!-- Footer -->
@@ -783,5 +802,13 @@
     <!-- End of Footer -->
 
     <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>

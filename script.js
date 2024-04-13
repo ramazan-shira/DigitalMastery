@@ -1,25 +1,30 @@
 // Admission form validation
-const register = () => {
-const fullName = document.getElementById("full-name").value;
-const emailAddress = document.getElementById("email-address").value;
-const phone = document.getElementById("phone").value;
-const female = document.getElementById("female").value;
-const male = document.getElementById("male").value;
-const course = document.getElementById("course").value;
-const java = document.getElementById("java").value;
-const net = document.getElementById("net").value;
-const javascript = document.getElementById("javascript").value;
-const react = document.getElementById("react").value;
-const password = document.getElementById("password").value;
-const confirmPassword = document.getElementById("confirm-password").value;
-const nameError = document.getElementById("name-error");
-const emailError = document.getElementById("email-error");
-const phoneError = document.getElementById("phone-error");
-const genderError = document.getElementById("gender-error");
-const courseError = document.getElementById("course-error");
-const knowledgeError = document.getElementById("knowledge-error");
-const passError = document.getElementById("pass-error");
-const confPassError = document.getElementById("conf-pass-error");
+var fullName = document.getElementById("full-name");
+var emailAddress = document.getElementById("email-address");
+var phone = document.getElementById("phone");
+var female = document.getElementById("female");
+var male = document.getElementById("male");
+var course = document.getElementById("course");
+var selectedCourse = course.selectedIndex;
+var selectedCourseValue = course.options[selectedCourse].value;
+var java = document.getElementById("java");
+var net = document.getElementById("net");
+var javascript = document.getElementById("javascript");
+var react = document.getElementById("react");
+var password = document.getElementById("password");
+var confirmPassword = document.getElementById("confirm-password");
+
+var nameError = document.getElementById("name-error");
+var emailError = document.getElementById("email-error");
+var phoneError = document.getElementById("phone-error");
+var genderError = document.getElementById("gender-error");
+var courseError = document.getElementById("course-error");
+var knowledgeError = document.getElementById("knowledge-error");
+var passError = document.getElementById("pass-error");
+var confPassError = document.getElementById("conf-pass-error");
+
+var registeredMessage = document.getElementById("registered-message");
+var registered = document.getElementById("registered");
 
 const fullNameLengthRegex = /^.{3,}\s.{3,}$/;
 const fullNameCharacterRegex = /^[a-zA-Z]+\s[a-zA-Z]+$/;
@@ -30,109 +35,116 @@ const regPassLowercase = /.*[a-z].*/;
 const regPassDigit = /.*\d.*/;
 const regPassSpecialchar = /.*[!@#$%^&*()\-_=+{};:,<.>].*/;
 const regPassLength = /.{8,}/;
-  if (fullName === "") {
-    nameError.innerHTML = "Please enter your full name!";
-    return;
-  }
-  if (fullNameLengthRegex.test(fullName)) {
-    nameError.innerHTML =
+
+const clearBtn = document.getElementById("clear");
+var valid = true;
+
+const register = () => {
+  if (fullName.value === "") {
+    nameError.innerText = "Please enter your full name!";
+    valid = false;
+  } else if (!fullNameLengthRegex.test(fullName.value)) {
+    nameError.innerText =
       "First name and last name must be at least 3 characters!";
-    return;
-  }
-  if (fullNameCharacterRegex.test(fullName)) {
-    nameError.innerHTML = "First name and last name must contain only letters!";
-    return;
-  }
-  if (emailAddress === "") {
-    emailError.innerHTML = "Please enter your email address!";
-    return;
-  }
-  if (regEmail.test(emailAddress)) {
-    emailError.innerHTML = "Invalid email address!";
-    return;
-  }
-  if (phone === "") {
-    phoneError.innerHTML = "Please enter your phone number!";
-    return;
-  }
-  if (regPhone.test(phone)) {
-    phoneError.innerHTML = "Invalid phone number!Correct format: XXX-XXXXXXX";
-    return;
-  }
-  if (female.checked == false && male.checked == false) {
-    genderError.innerHTML = "Please select your gender!";
-    return;
-  }
-  if (course.value === "") {
-    courseError.innerHTML = "Please select your course!";
-    return;
-  }
-  if (
-    java.checked == false &&
-    net.checked == false &&
-    javascript.checked == false &&
-    react.checked == false
-  ) {
-    knowledgeError.innerHTML = "Please choose a programming language";
-    return;
-  }
-  if (password === "") {
-    passError.innerHTML = "Please enter your password!";
-    return;
-  }
-  if (regPassUppercase.test(password)) {
-    passError.innerHTML = "Password must contain at least one uppercase letter";
-    return;
-  }
-  if (regPassLowercase.test(password)) {
-    passError.innerHTML = "Password must contain at least one lowercase letter";
-    return;
-  }
-  if (regPassDigit.test(password)) {
-    passError.innerHTML = "Password must contain at least one digit";
-    return;
-  }
-  if (regPassSpecialchar.test(password)) {
-    passError.innerHTML =
-      "Password must contain at least one special character";
-    return;
-  }
-  if (regPassLength.test(password)) {
-    passError.innerHTML = "Password must contain at least 8 characters";
-    return;
-  }
-  if (password !== confirmPassword) {
-    confPassError.innerHTML = "Passwords do not match";
-    return;
+    valid = false;
+  } else if (!fullNameCharacterRegex.test(fullName.value)) {
+    nameError.innerText = "First name and last name must contain only letters!";
+    valid = false;
   }
 
-  alert(`Hey ${fullName.value}, you were registered to course ${course.value}`);
+  //Validate email address
+  if (emailAddress.value === "") {
+    emailError.innerText = "Please enter your email address!";
+    valid = false;
+  } else if (!regEmail.test(emailAddress.value)) {
+    emailError.innerText = "Invalid email address!";
+    valid = false;
+  }
+  //Validate phone number
+  if (phone.value === "") {
+    phoneError.innerText = "Please enter your phone number!";
+    valid = false;
+  } else if (!regPhone.test(phone.value)) {
+    phoneError.innerText = "Invalid phone number!Correct format: XXX-XXXXXXX";
+    valid = false;
+  }
+  //Validate gender
+  if (!female.checked && !male.checked) {
+    genderError.innerText = "Please select your gender!";
+    valid = false;
+
+    //Validate course
+  }
+  if (selectedCourseValue === "select") {
+    courseError.innerText = "Please select your course!";
+    valid = false;
+  }
+
+  //Validate knowledge
+  if (!java.checked && !net.checked && !javascript.checked && !react.checked) {
+    knowledgeError.innerText = "Please choose a programming language";
+    valid = false;
+  }
+
+  //Validate password
+  if (password.value === "") {
+    passError.innerText = "Please enter your password!";
+    valid = false;
+  } else if (!regPassUppercase.test(password.value)) {
+    passError.innerText = "Password must contain at least one uppercase letter";
+    valid = false;
+  } else if (!regPassLowercase.test(password.value)) {
+    passError.innerText = "Password must contain at least one lowercase letter";
+    valid = false;
+  } else if (!regPassDigit.test(password.value)) {
+    passError.innerText = "Password must contain at least one digit";
+    valid = false;
+  } else if (!regPassSpecialchar.test(password.value)) {
+    passError.innerText =
+      "Password must contain at least one special character";
+    valid = false;
+  } else if (!regPassLength.test(password.value)) {
+    passError.innerText = "Password must contain at least 8 characters";
+    valid = false;
+  }
+
+  //Validate confirm password
+  if (confirmPassword.value === "") {
+    confPassError.innerText = "Please enter your password!";
+    valid = false;
+  } else if (password !== confirmPassword.value) {
+    confPassError.innerText = "Passwords do not match";
+    valid = false;
+  }
+
+  if (valid) {
+    registeredMessage.style.direction = "flex";
+    register.innerText = `Congratulations ${fullName.value}!!You are registered to ${course.value} course.`;
+  }
 };
 
-const clear = () => {
-  console.log("clicked");
-
+clearBtn.addEventListener("click", function (e) {
   fullName.value = "";
   emailAddress.value = "";
   phone.value = "";
   female.checked = false;
   male.checked = false;
-  course.value = "";
+  course.selectedIndex = 0;
   java.checked = false;
   net.checked = false;
   javascript.checked = false;
   react.checked = false;
   password.value = "";
   confirmPassword.value = "";
-  nameError.innerHTML = "";
-  emailError.innerHTML = "";
-  phoneError.innerHTML = "";
-  genderError.innerHTML = "";
-  courseError.innerHTML = "";
-  knowledgeError.innerHTML = "";
-  passError.innerHTML = "";
-  confPassError.innerHTML = "";
-};
+  nameError.innerText = "";
+  emailError.innerText = "";
+  phoneError.innerText = "";
+  genderError.innerText = "";
+  courseError.innerText = "";
+  knowledgeError.innerText = "";
+  passError.innerText = "";
+  confPassError.innerText = "";
+});
 
 // Constact us validation
 const submit = () => {

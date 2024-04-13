@@ -50,8 +50,13 @@ body {
   color: #38a3a5;
 }
 
-.burger-btn {
+.mobile_menu_toggle {
+  cursor: pointer;
   display: none;
+}
+
+.menu_toggle_icon {
+  font-size: 4.5rem;
 }
 
 #logo {
@@ -141,14 +146,27 @@ body {
   width: 100%;
 }
 
+/* Expertise */
+.expertise {
+  margin: 70px 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
 /* What we offer */
+.what-we-offer {
+  margin: 70px 150px;
+}
+
 .offer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  margin: 70px 150px;
 }
 
 .offer-title {
@@ -216,7 +234,7 @@ body {
   align-items: flex-start;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 50px 0;
+  padding: 70px 0 0 0;
 }
 .ag-courses_item {
   -ms-flex-preferred-size: calc(33.33333% - 30px);
@@ -311,7 +329,7 @@ body {
 
 /* Admissions */
 .admission {
-  margin: 70px 150px;
+  margin: 0 150px 70px 150px;
 }
 
 .admission-container {
@@ -450,9 +468,26 @@ body {
   background-color: #9d8189;
 }
 
-.input .input-item span {
+.input .input-item span,
+.input span {
   font-size: 14px;
   color: red;
+}
+
+.registered-message {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #c7f9cc;
+
+  box-sizing: border-box;
+  padding: 30px;
+  width: 50%;
+}
+
+.registered p {
+  font-size: 26px;
+  font-weight: 500;
 }
 
 /* Instructors */

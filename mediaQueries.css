@@ -7,7 +7,7 @@
 
 @media screen and (max-width: 1200px) {
   .about-container,
-  .offer,
+  .what-we-offer,
   .trainings,
   .instructors,
   .testimonials,
@@ -124,20 +124,47 @@
   }
 
   .tabs {
+    position: absolute;
+    top: 17rem;
+    right: 150px;
+    width: 100%;
+    background-color: #fff;
+    height: calc(100% - 17rem);
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
     display: none;
   }
 
-  .burger-btn {
+  .tabs::before {
+    position: absolute;
+    content: "";
+    right: 100px;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(241, 241, 241, 0.383);
+    backdrop-filter: blur(1rem);
+    z-index: 10;
+  }
+  .tab a,
+  .tab a:visited {
+    color: yellow;
+    font-size: 24px;
+  }
+
+  .tabs.active {
     display: block;
-    margin-right: 20px;
+  }
+  .menu-toggle {
+    display: block;
+    margin-right: 200px;
   }
 
-  .burger-btn:hover {
+  .menu-toggle:hover {
     cursor: pointer;
-  }
-
-  .burger-btn img {
-    width: 40px;
   }
 
   .about-container {
