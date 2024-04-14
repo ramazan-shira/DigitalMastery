@@ -187,6 +187,10 @@
     transform: translateY(15px);
   }
 
+  .navbar a:hover {
+    color: #6ca5e2;
+  }
+
   .navbar.open {
     right: 0;
   }
