@@ -1,3 +1,17 @@
+let menu = document.getElementById("menu-icon");
+let navbar = document.querySelector(".navbar");
+
+const showNav = () => {
+  console.log("here");
+
+  navbar.classList.toggle("open");
+};
+
+window.onscroll = () => {
+  menu.classList.remove("bx-x");
+  navbar.classList.remove("open");
+};
+
 // Admission form validation
 var fullName = document.getElementById("full-name");
 var emailAddress = document.getElementById("email-address");
@@ -7,6 +21,7 @@ var male = document.getElementById("male");
 var course = document.getElementById("course");
 var selectedCourse = course.selectedIndex;
 var selectedCourseValue = course.options[selectedCourse].value;
+
 var java = document.getElementById("java");
 var net = document.getElementById("net");
 var javascript = document.getElementById("javascript");
@@ -72,9 +87,9 @@ const register = () => {
   if (!female.checked && !male.checked) {
     genderError.innerText = "Please select your gender!";
     valid = false;
-
-    //Validate course
   }
+
+  //Validate course
   if (selectedCourseValue === "select") {
     courseError.innerText = "Please select your course!";
     valid = false;
@@ -112,7 +127,7 @@ const register = () => {
   if (confirmPassword.value === "") {
     confPassError.innerText = "Please enter your password!";
     valid = false;
-  } else if (password !== confirmPassword.value) {
+  } else if (password.value !== confirmPassword.value) {
     confPassError.innerText = "Passwords do not match";
     valid = false;
   }
