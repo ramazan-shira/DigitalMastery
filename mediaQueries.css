@@ -434,6 +434,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  header {
+    padding: 10px 30px 10px 30px;
+  }
+
   .about-container,
   .course-container,
   .gallery {
