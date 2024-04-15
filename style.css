@@ -1,12 +1,12 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
-
 
 /* Navigation bar style */
 header {
@@ -19,7 +19,7 @@ header {
   background-color: #fff;
   transition: all 0.4s ease;
   box-sizing: border-box;
-  padding: 0 150px;
+  padding: 5px 150px;
 }
 
 .logo img {
@@ -133,7 +133,7 @@ header {
   gap: 30px;
 }
 
-.about-us-title h2{
+.about-us-title h2 {
   font-size: 48px;
   font-weight: 600;
   line-height: 1.2;
@@ -210,7 +210,7 @@ header {
   gap: 30px;
 }
 
-.offer-title h2{
+.offer-title h2 {
   font-size: 36px;
   font-weight: 600;
   text-align: center;
@@ -473,7 +473,7 @@ header {
   gap: 30px;
 }
 
-.admission-title h2{
+.admission-title h2 {
   width: 100%;
   text-align: center;
   font-size: 36px;
@@ -508,7 +508,6 @@ header {
 .input-label {
   font-size: 18px;
   font-weight: 600;
-  
 }
 
 .gender .gender-title {
@@ -523,7 +522,11 @@ header {
   margin: 0;
 }
 
-#icon-user, #icon-envelope, #icon-phone, #icon-key, #icon-conf-key {
+#icon-user,
+#icon-envelope,
+#icon-phone,
+#icon-key,
+#icon-conf-key {
   position: absolute;
   margin-left: 20px;
   margin-top: 13px;
@@ -1011,8 +1014,7 @@ figure.review-card .author h5 span {
   margin: 70px 150px;
 }
 
-
-.gallery-title h2{
+.gallery-title h2 {
   font-size: 48px;
   font-weight: 600;
   text-align: center;
@@ -1055,7 +1057,7 @@ figure.review-card .author h5 span {
   gap: 30px;
 }
 
-.contact-title h2{
+.contact-title h2 {
   font-size: 48px;
   font-weight: 600;
   text-align: center;
