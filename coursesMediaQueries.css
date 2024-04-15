@@ -1,0 +1,196 @@
+@media screen and (max-width: 1300px) {
+    header {
+      transition: 0.2s;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    header {
+      padding: 0 130px;
+    }
+  
+    .courses {
+      margin: 70px 130px;
+    }
+  
+  }
+  
+  @media screen and (max-width: 1080px) {
+  
+
+  }
+  
+  @media screen and (max-width: 992px) {
+    header {
+      padding: 0px 50px 0px 100px;
+    }
+  
+    
+    .courses{
+      margin: 70px 100px;
+    }
+  
+    .footer-content {
+      padding: 50px 0 30px 0;
+    }
+  
+    .footer {
+      padding: 0 100px;
+    }
+  }
+  
+  @media screen and (max-width: 870px) {
+    header {
+      padding: 5px 50px 5px 100px;
+    }
+  
+    .navbar {
+      margin: 0;
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      width: 300px;
+      height: 110vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 170px 30px;
+      transition: all 0.4s ease;
+      background-color: #e2eafc;
+    }
+  
+    .navbar a {
+      display: block;
+      margin: 15px 0;
+      color: #6ca5e2;
+      font-size: 20px;
+    }
+  
+    .navbar a:visited {
+      color: #6ca5e2;
+    }
+  
+    .navbar a:hover {
+      color: #2d83de;
+      transform: translateY(15px);
+    }
+  
+    .navbar a:hover {
+      color: #6ca5e2;
+    }
+  
+    .navbar.open {
+      right: 0;
+    }
+  
+    .menu-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    #menu-icon {
+      display: block;
+      margin: 0;
+    }
+  
+   
+  
+    .footer-content {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+    }
+  
+    .nav-menu {
+      align-items: center;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+  
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+  
+      gap: 40px;
+    }
+  
+    .nav-menu {
+      align-items: flex-start;
+    }
+  
+    .info {
+      margin: 0;
+    }
+  }
+  
+  @media screen and (max-width: 700px) {
+
+  }
+  
+  @media only screen and (max-width: 650px) {
+    header {
+      padding: 5px 30px 5px 70px;
+    }
+  
+    
+    .course-container
+     {
+      margin: 70px 70px;
+    }
+  
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 50px;
+    }
+  
+    .info {
+      margin: 0;
+    }
+  
+    .footer {
+      padding: 0 70px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+  
+  
+    .nav-menu a,
+    .info p,
+    .rights p {
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    header {
+      padding: 10px 30px 10px 30px;
+    }
+  
+    .navbar {
+      width: 200px;
+    }
+  
+    
+    .courses {
+      margin: 70px 30px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .main-page-description h4 {
+      font-size: 16px;
+    }
+  
+    .about-us-description {
+      font-size: 18px;
+    }
+  
+    .admission-form {
+      width: 80%;
+    }
+  }
+  

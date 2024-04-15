@@ -1,20 +1,12 @@
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
-/* Font family */
-html {
-  overflow-x: hidden;
-}
-body {
-  font-family: "Nunito", sans-serif;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+*{
+  padding: 0;
   margin: 0;
+}
+
+html, body {
   overflow-x: hidden;
 }
+
 
 /* Navigation bar style */
 header {
