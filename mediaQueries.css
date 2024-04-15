@@ -26,6 +26,10 @@
   figure.review-card blockquote:after {
     font-size: 30px;
   }
+
+  .trusted-companies{
+   flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -68,12 +72,12 @@
     font-size: 25px;
   }
 
-  .about-us-title,
+  .about-us-title h2,
   .trainings-title,
   .instructors-title,
   .testimonials-title,
-  .gallery-title,
-  .contact-title {
+  .gallery-title h2,
+  .contact-title h2{
     font-size: 42px;
   }
 
@@ -90,7 +94,7 @@
 
 @media screen and (max-width: 992px) {
   header {
-    padding: 10px 50px 10px 100px;
+    padding: 0px 50px 0px 100px;
   }
 
   .about-container,
@@ -122,7 +126,7 @@
     width: 90%;
   }
 
-  .about-us-title {
+  .about-us-title h2{
     font-size: 38px;
   }
 
@@ -162,6 +166,10 @@
 }
 
 @media screen and (max-width: 870px) {
+  header {
+    padding: 5px 50px 5px 100px;
+  }
+
   .navbar {
     margin: 0;
     position: absolute;
@@ -176,9 +184,15 @@
     transition: all 0.4s ease;
     background-color: #e2eafc;
   }
+
   .navbar a {
     display: block;
     margin: 15px 0;
+    color: #6ca5e2;
+    font-size: 20px;
+  }
+
+  .navbar a:visited {
     color: #6ca5e2;
   }
 
@@ -219,6 +233,15 @@
   .contact-details {
     grid-template-columns: 1fr;
   }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+
+  .nav-menu {
+    align-items: center;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -257,7 +280,12 @@
   .footer-content {
     display: flex;
     flex-direction: column;
+
     gap: 40px;
+  }
+
+  .nav-menu {
+    align-items: flex-start;
   }
 
   .info {
@@ -278,12 +306,12 @@
     font-size: 22px;
   }
 
-  .about-us-title,
+  .about-us-title h2,
   .trainings-title,
   .instructors-title,
   .testimonials-title,
-  .gallery-title,
-  .contact-title {
+  .gallery-title h2,
+  .contact-title h2{
     font-size: 36px;
   }
 
@@ -302,7 +330,7 @@
 
 @media only screen and (max-width: 650px) {
   header {
-    padding: 10px 30px 10px 70px;
+    padding: 5px 30px 5px 70px;
   }
 
   .about-container,
@@ -320,7 +348,7 @@
     padding: 70px 70px;
   }
 
-  .about-us-title {
+  .about-us-title h2 {
     text-align: center;
   }
 
@@ -332,17 +360,22 @@
     margin: 50px 70px 70px 70px;
   }
 
-  .about-us-title,
+  .about-us-title h2,
   .trainings-title,
   .instructors-title,
   .testimonials-title,
-  .gallery-title,
-  .contact-title {
+  .gallery-title h2,
+  .contact-title h2{
     font-size: 32px;
   }
 
   .popular-categories-container {
     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 30px;
+  }
+
+  .popular-categories-card {
+    padding: 10px 20px;
   }
 
   .instructors-cards {
@@ -390,10 +423,6 @@
     gap: 10px;
   }
 
-  .popular-categories-card {
-    padding: 10px 20px;
-  }
-
   .instructor-card {
     padding: 0 30px;
   }
@@ -438,13 +467,16 @@
     padding: 10px 30px 10px 30px;
   }
 
+  .navbar {
+    width: 200px;
+  }
+
   .about-container,
   .course-container,
   .gallery {
     margin: 70px 30px;
   }
 
-  .navbar,
   .what-we-offer,
   .instructors,
   .testimonials,
@@ -454,23 +486,23 @@
     padding: 0 30px;
   }
 
-  .about-us-title,
+  .about-us-title h2,
   .trainings-title,
   .instructors-title,
   .testimonials-title,
-  .gallery-title,
-  .contact-title,
-  .offer-title,
+  .gallery-title h2,
+  .contact-title h2,
+  .offer-title h2,
   .popular-categories h2,
   .courses-container-titles h2,
-  .admission-title,
+  .admission-title h2,
   .trusted-container-titles h2,
   .instructors-title {
     font-size: 28px;
   }
 
   .input .input-item select {
-    width: 110%;
+    width: 120%;
   }
 
   .admission {
@@ -510,5 +542,9 @@
 
   .about-us-description {
     font-size: 18px;
+  }
+
+  .admission-form {
+    width: 80%;
   }
 }
