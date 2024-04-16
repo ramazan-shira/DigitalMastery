@@ -255,4 +255,8 @@
   .course {
     max-width: 340px;
   }
+
+  .footer {
+    padding: 0 30px;
+  }
 }
