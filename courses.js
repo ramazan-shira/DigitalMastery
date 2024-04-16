@@ -1,3 +1,17 @@
+let menu = document.getElementById("menu-icon");
+let navbar = document.querySelector(".navbar");
+
+const showNav = () => {
+  console.log("here");
+
+  navbar.classList.toggle("open");
+};
+
+window.onscroll = () => {
+  menu.classList.remove("bx-x");
+  navbar.classList.remove("open");
+};
+
 const all = document.getElementById("all");
 const programming = document.getElementById("programming");
 const security = document.getElementById("security");
