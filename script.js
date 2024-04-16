@@ -22,9 +22,6 @@ var course = document.getElementById("course");
 var selectedCourse = course.selectedIndex;
 var selectedCourseValue = course.options[selectedCourse].value;
 var selectedCourseText = course.options[selectedCourse].text;
-var fileInput = document.getElementById("fileInput");
-var filePath = fileInput.value;
-var allowedExtensions = /(\.docx|\.pdf)$/i;
 
 var java = document.getElementById("java");
 var net = document.getElementById("net");
@@ -38,7 +35,9 @@ var emailError = document.getElementById("email-error");
 var phoneError = document.getElementById("phone-error");
 var genderError = document.getElementById("gender-error");
 var courseError = document.getElementById("course-error");
+
 var fileError = document.getElementById("file-error");
+
 var knowledgeError = document.getElementById("knowledge-error");
 var passError = document.getElementById("pass-error");
 var confPassError = document.getElementById("conf-pass-error");
@@ -59,22 +58,30 @@ const regPassLength = /.{8,}/;
 const clearBtn = document.getElementById("clear");
 var valid = true;
 
+//Validate course
 course.addEventListener("change", function (e) {
   selectedCourseValue = this.value;
   const selectedIndex = this.selectedIndex;
   selectedCourseText = this.options[selectedIndex].text;
 });
 
-fileInput.addEventListener("change", function (e) {
-  if (filePath.trim() === "") {
-    fileError.innerText = "Please upload a file!";
-  } else if (!allowedExtensions.exec(filePath)) {
-    fileError.innerText = "Please upload a valid.docx or.pdf file`1";
+var fileInput = document.getElementById("file").req;
+
+function fileValidation() {
+  var filePath = fileInput.value;
+  var allowedExtensions =
+    /(\.doc|\.docx|\.odt|\.pdf|\.tex|\.txt|\.rtf|\.wps|\.wks|\.wpd)$/i;
+  var x = document.getElementById("myFile").required;
+
+  if (!allowedExtensions.exec(filePath)) {
+    fileError.innerText = "Invalid file type";
+    fileInput.value = "";
+    valid = false;
   } else {
     valid = true;
     fileError.innerText = "";
   }
-});
+}
 
 const register = () => {
   if (fullName.value === "") {
@@ -134,15 +141,10 @@ const register = () => {
     courseError.innerText = "";
   }
 
-  //Validate input file
-  // if (filePath.trim() !== "") {
-  //   fileError.innerText = "Please upload a file!";
-  // } else if (!allowedExtensions.exec(filePath)) {
-  //   fileError.innerText = "Please upload a valid.docx or.pdf file`1";
-  // } else {
-  //   valid = true;
-  //   fileError.innerText = "";
-  // }
+  //Check if file is uploaded successfully
+  if (fileError.innerText === "") {
+    valid = true;
+  }
 
   //Validate knowledge
   if (!java.checked && !net.checked && !javascript.checked && !react.checked) {
@@ -203,6 +205,7 @@ clearBtn.addEventListener("click", function (e) {
   female.checked = false;
   male.checked = false;
   course.selectedIndex = 0;
+  fileInput.value = "";
   java.checked = false;
   net.checked = false;
   javascript.checked = false;
@@ -214,6 +217,7 @@ clearBtn.addEventListener("click", function (e) {
   phoneError.innerText = "";
   genderError.innerText = "";
   courseError.innerText = "";
+  fileError.innerText = "";
   knowledgeError.innerText = "";
   passError.innerText = "";
   confPassError.innerText = "";

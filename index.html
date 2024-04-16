@@ -329,6 +329,7 @@
                 id="full-name"
                 placeholder="Enter full name"
                 class="input"
+                tabindex="1"
               />
               <span id="name-error"></span>
             </div>
@@ -344,6 +345,7 @@
                 id="email-address"
                 placeholder="Enter your email"
                 class="input"
+                tabindex="2"
               />
               <span id="email-error"></span>
             </div>
@@ -359,6 +361,7 @@
                 id="phone"
                 placeholder="Enter your phone number"
                 class="input"
+                tabindex="3"
               />
               <span id="phone-error"></span>
             </div>
@@ -368,10 +371,20 @@
             <p class="gender-title">Gender</p>
             <div class="input-item">
               <label for="female"
-                ><input type="radio" name="gender" id="female" />Female</label
+                ><input
+                  type="radio"
+                  name="gender"
+                  id="female"
+                  tabindex="4"
+                />Female</label
               >
               <label for="male"
-                ><input type="radio" name="gender" id="male" />Male</label
+                ><input
+                  type="radio"
+                  name="gender"
+                  id="male"
+                  tabindex="5"
+                />Male</label
               >
             </div>
             <span id="gender-error"></span>
@@ -380,7 +393,7 @@
           <div class="input">
             <label for="course" class="input-label">Course</label>
             <div class="input-item">
-              <select name="course" id="course" class="input">
+              <select name="course" id="course" class="input" tabindex="6">
                 <option value="select">Select Course</option>
                 <option value="fullstack">Full Stack Development</option>
                 <option value="ui-ux">UI/UX Web Design Mobile Design</option>
@@ -396,9 +409,15 @@
           </div>
 
           <div class="input cv">
-            <p>Upload your CV</p>
-            <div class="inpit-item">
-              <input type="file" id="fileInput" />
+            <label for="cv" class="input-label">Upload your CV</label>
+            <div class="input-item">
+              <input
+                type="file"
+                id="file"
+                onchange="return fileValidation()"
+                required
+                tabindex="7"
+              />
               <span id="file-error"></span>
             </div>
           </div>
@@ -407,21 +426,37 @@
             <p class="knowledge-title">Knowledge</p>
             <div class="input-item coding">
               <label for="java"
-                ><input type="checkbox" name="java" id="java" />Java</label
+                ><input
+                  type="checkbox"
+                  name="java"
+                  id="java"
+                  tabindex="8"
+                />Java</label
               >
               <label for="net"
-                ><input type="checkbox" name="net" id="net" />.Net</label
+                ><input
+                  type="checkbox"
+                  name="net"
+                  id="net"
+                  tabindex="9"
+                />.Net</label
               >
               <label for="javascript"
                 ><input
                   type="checkbox"
                   name="javascript"
                   id="javascript"
+                  tabindex="10"
                 />JavaScript
               </label>
 
               <label for="react"
-                ><input type="checkbox" name="react" id="react" />React</label
+                ><input
+                  type="checkbox"
+                  name="react"
+                  id="react"
+                  tabindex="11"
+                />React</label
               >
             </div>
             <span id="knowledge-error"></span>
@@ -436,6 +471,7 @@
                 name="password"
                 id="password"
                 class="input"
+                tabindex="12"
               />
               <span id="pass-error"></span>
             </div>
@@ -450,6 +486,7 @@
                 name="confirm-password"
                 id="confirm-password"
                 class="input"
+                tabindex="13"
               />
               <span id="conf-pass-error"></span>
             </div>

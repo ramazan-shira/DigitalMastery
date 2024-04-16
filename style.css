@@ -565,18 +565,18 @@ header {
 
 .input .coding {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
 }
 
 .input .coding label {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .input .coding input[type="checkbox"] {
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
 }
 
 .buttons {
