@@ -21,6 +21,10 @@ var male = document.getElementById("male");
 var course = document.getElementById("course");
 var selectedCourse = course.selectedIndex;
 var selectedCourseValue = course.options[selectedCourse].value;
+var selectedCourseText = course.options[selectedCourse].text;
+var fileInput = document.getElementById("fileInput");
+var filePath = fileInput.value;
+var allowedExtensions = /(\.docx|\.pdf)$/i;
 
 var java = document.getElementById("java");
 var net = document.getElementById("net");
@@ -34,6 +38,7 @@ var emailError = document.getElementById("email-error");
 var phoneError = document.getElementById("phone-error");
 var genderError = document.getElementById("gender-error");
 var courseError = document.getElementById("course-error");
+var fileError = document.getElementById("file-error");
 var knowledgeError = document.getElementById("knowledge-error");
 var passError = document.getElementById("pass-error");
 var confPassError = document.getElementById("conf-pass-error");
@@ -54,6 +59,23 @@ const regPassLength = /.{8,}/;
 const clearBtn = document.getElementById("clear");
 var valid = true;
 
+course.addEventListener("change", function (e) {
+  selectedCourseValue = this.value;
+  const selectedIndex = this.selectedIndex;
+  selectedCourseText = this.options[selectedIndex].text;
+});
+
+fileInput.addEventListener("change", function (e) {
+  if (filePath.trim() === "") {
+    fileError.innerText = "Please upload a file!";
+  } else if (!allowedExtensions.exec(filePath)) {
+    fileError.innerText = "Please upload a valid.docx or.pdf file`1";
+  } else {
+    valid = true;
+    fileError.innerText = "";
+  }
+});
+
 const register = () => {
   if (fullName.value === "") {
     nameError.innerText = "Please enter your full name!";
@@ -65,6 +87,9 @@ const register = () => {
   } else if (!fullNameCharacterRegex.test(fullName.value)) {
     nameError.innerText = "First name and last name must contain only letters!";
     valid = false;
+  } else {
+    valid = true;
+    nameError.innerText = "";
   }
 
   //Validate email address
@@ -74,7 +99,11 @@ const register = () => {
   } else if (!regEmail.test(emailAddress.value)) {
     emailError.innerText = "Invalid email address!";
     valid = false;
+  } else {
+    valid = true;
+    emailError.innerText = "";
   }
+
   //Validate phone number
   if (phone.value === "") {
     phoneError.innerText = "Please enter your phone number!";
@@ -82,23 +111,46 @@ const register = () => {
   } else if (!regPhone.test(phone.value)) {
     phoneError.innerText = "Invalid phone number!Correct format: XXX-XXXXXXX";
     valid = false;
+  } else {
+    valid = true;
+    phoneError.innerText = "";
   }
+
   //Validate gender
   if (!female.checked && !male.checked) {
     genderError.innerText = "Please select your gender!";
     valid = false;
+  } else {
+    valid = true;
+    genderError.innerText = "";
   }
 
   //Validate course
   if (selectedCourseValue === "select") {
     courseError.innerText = "Please select your course!";
     valid = false;
+  } else {
+    valid = true;
+    courseError.innerText = "";
   }
+
+  //Validate input file
+  // if (filePath.trim() !== "") {
+  //   fileError.innerText = "Please upload a file!";
+  // } else if (!allowedExtensions.exec(filePath)) {
+  //   fileError.innerText = "Please upload a valid.docx or.pdf file`1";
+  // } else {
+  //   valid = true;
+  //   fileError.innerText = "";
+  // }
 
   //Validate knowledge
   if (!java.checked && !net.checked && !javascript.checked && !react.checked) {
     knowledgeError.innerText = "Please choose a programming language";
     valid = false;
+  } else {
+    valid = true;
+    knowledgeError.innerText = "";
   }
 
   //Validate password
@@ -121,6 +173,9 @@ const register = () => {
   } else if (!regPassLength.test(password.value)) {
     passError.innerText = "Password must contain at least 8 characters";
     valid = false;
+  } else {
+    valid = true;
+    passError.innerText = "";
   }
 
   //Validate confirm password
@@ -130,11 +185,14 @@ const register = () => {
   } else if (password.value !== confirmPassword.value) {
     confPassError.innerText = "Passwords do not match";
     valid = false;
+  } else {
+    valid = true;
+    confPassError.innerText = "";
   }
 
   if (valid) {
-    registeredMessage.style.direction = "flex";
-    register.innerText = `Congratulations ${fullName.value}!!You are registered to ${course.value} course.`;
+    registeredMessage.style.display = "flex";
+    registered.innerText = `Congratulations ${fullName.value}!!You are registered to ${selectedCourseText} course.`;
   }
 };
 

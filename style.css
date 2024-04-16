@@ -621,7 +621,7 @@ header {
 }
 
 .registered-message {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   background-color: #c7f9cc;

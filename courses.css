@@ -88,14 +88,16 @@ header {
   text-decoration: none;
   color: #d1d9e6;
   background-color: transparent;
+  border: none;
   font-size: 20px;
   font-family: 600;
   line-height: 1.5;
-  padding: 10px 5px;
+  padding: 10px 10px;
   text-align: center;
 }
 
 .btn:hover {
+  cursor: pointer;
   box-shadow: 6px 6px 12px #002436, -6px -6px 12px #004d74 !important;
   transition: all 0.3s ease;
 }
@@ -105,6 +107,17 @@ header {
   margin: 70px 150px;
 }
 .courses-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.programming,
+.security,
+.design,
+.marketing {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -159,6 +172,13 @@ header {
 .course-details {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  gap: 30px;
+}
+
+.cyber,
+.seo {
+  display: flex;
+  flex-direction: column;
   gap: 30px;
 }
 
