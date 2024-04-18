@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Platypi", serif;
+  src: url("https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap");
+}
+@font-face {
+  font-family: "Lugrasimo", cursive;
+  src: url("https://fonts.googleapis.com/css2?family=Lugrasimo&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap");
+}
+@font-face {
+  font-family: "Noto Serif", serif;
+  src: url("https://fonts.googleapis.com/css2?family=Lugrasimo&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap");
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -34,6 +47,7 @@ header {
 
 .navbar a {
   font-size: 20px;
+  font-family: "Noto Serif", serif;
   text-decoration: none;
   color: black;
   font-weight: 600;
@@ -102,16 +116,18 @@ header {
 }
 
 .main-page-description h1 {
-  font-size: 70px;
+  font-size: 80px;
   margin-bottom: 5px;
   text-transform: uppercase;
   line-height: 1.8;
+  font-family: "Lugrasimo", cursive;
 }
 
 .main-page-description h4 {
   font-size: 30px;
   margin-top: 5px;
   text-transform: uppercase;
+  font-family: "Platypi", serif;
 }
 
 /* About us style */
@@ -138,9 +154,10 @@ header {
   font-weight: 600;
   line-height: 1.2;
 }
-.about-us-description {
+.about-us-description p {
   font-size: 20px;
   line-height: 1.5;
+  font-family: "Noto Serif", serif;
 }
 
 .about-us-image {
@@ -164,7 +181,7 @@ header {
 }
 
 .expertise-cards {
-  width: 60%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -195,6 +212,32 @@ header {
 .expertise-card-content {
   font-size: 24px;
   font-weight: 500;
+  font-family: "Noto Serif", serif;
+}
+
+.widget {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.header {
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-weight: 400;
+  font-size: 1.5em;
+  font-family: "Noto Serif", serif;
+}
+
+.chart-container {
+  padding: 25px;
+}
+
+.shadow {
+  -webkit-filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
 }
 
 /* What we offer */
@@ -245,8 +288,9 @@ header {
 }
 
 .offer-card-content {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
+  font-family: "Noto Serif", serif;
 }
 
 .offer-cards:nth-child(1) {
@@ -324,6 +368,7 @@ header {
 .popular-categories-card p {
   font-size: 18px;
   margin: 10px 0;
+  font-family: "Noto Serif", serif;
 }
 
 /* Courses */
@@ -393,6 +438,7 @@ header {
 
 .course-description {
   padding: 20px;
+  font-family: "Noto Serif", serif;
 }
 
 .course-description h2 {
@@ -402,6 +448,7 @@ header {
   margin: 15px 0 15px;
   transition: all 0.4s ease;
   text-align: center;
+  font-family: "Noto Serif", serif;
 }
 
 .course-description h2:hover {
@@ -427,6 +474,7 @@ header {
   line-height: 30px;
   letter-spacing: 1px;
   margin: 0 0 30px 0;
+  font-family: "Noto Serif", serif;
 }
 
 .course-btn {
@@ -443,6 +491,7 @@ header {
   transition: all 0.4s ease;
   color: #fff;
   background-color: #2ec4b6;
+  font-family: "Noto Serif", serif;
 }
 
 .course-btn a:hover {
@@ -499,6 +548,7 @@ header {
   transition: 0.5s ease;
   padding-left: 50px;
   font-size: 16px;
+  font-family: "Noto Serif", serif;
 }
 
 .input-item .input:focus {
@@ -508,16 +558,21 @@ header {
 .input-label {
   font-size: 18px;
   font-weight: 600;
+  font-family: "Noto Serif", serif;
 }
 
 .gender .gender-title {
   font-size: 18px;
   font-weight: 600;
+  font-family: "Noto Serif", serif;
+
   margin: 0;
 }
 
 .input .knowledge-title {
   font-size: 18px;
+  font-family: "Noto Serif", serif;
+
   font-weight: 600;
   margin: 0;
 }
@@ -534,6 +589,7 @@ header {
 
 .gender .input-item label {
   font-size: 18px;
+  font-family: "Noto Serif", serif;
 }
 
 .gender .input-item label input[type="radio"] {
@@ -561,6 +617,7 @@ header {
   padding: 12px 20px;
   transition: 0.5s ease;
   font-size: 16px;
+  font-family: "Noto Serif", serif;
 }
 
 .input .coding {
@@ -572,6 +629,7 @@ header {
 
 .input .coding label {
   font-size: 18px;
+  font-family: "Noto Serif", serif;
 }
 
 .input .coding input[type="checkbox"] {
@@ -588,6 +646,8 @@ header {
   padding: 15px 30px;
   border-radius: 10px;
   font-size: 18px;
+  font-family: "Noto Serif", serif;
+
   font-weight: 600;
   background-color: #457b9d;
   color: white;
@@ -635,6 +695,8 @@ header {
   width: auto;
   height: auto;
   font-size: 26px;
+  font-family: "Noto Serif", serif;
+
   font-weight: 500;
   margin: 0;
 }
@@ -650,6 +712,7 @@ header {
 .instructors-title {
   font-size: 48px;
   font-weight: 600;
+  font-family: "Noto Serif", serif;
   text-align: center;
 }
 
@@ -808,18 +871,23 @@ header {
 }
 
 .join-content p {
+  font-size: 20px;
   font-weight: 500;
+  font-family: "Noto Serif", serif;
   line-height: 30px;
   margin: 0 0 30px 0;
 }
 
 .join-content h4 {
   font-size: 20px;
+  font-family: "Noto Serif", serif;
+
   margin: 0 0 10px 0;
 }
 
 .join-content h5 {
   font-size: 20px;
+  font-family: "Noto Serif", serif;
   margin: 0 0 40px 0;
 }
 
@@ -832,6 +900,7 @@ header {
   padding: 16px 30px;
   text-decoration: none;
   font-weight: 700;
+  font-family: "Noto Serif", serif;
   border-radius: 30px;
   transition: all 0.4s ease;
   color: #fff;
@@ -993,6 +1062,8 @@ figure.review-card .author {
 
 figure.review-card .author h5 {
   font-size: 15px;
+  font-family: "Noto Serif", serif;
+
   opacity: 0.8;
   margin: 0;
   font-weight: 800;
@@ -1000,6 +1071,8 @@ figure.review-card .author h5 {
 
 figure.review-card .author h5 span {
   font-weight: 400;
+  font-family: "Noto Serif", serif;
+
   text-transform: none;
   padding-left: 5px;
 }
@@ -1079,6 +1152,8 @@ figure.review-card .author h5 span {
 
 .contact-form label {
   font-size: 18px;
+  font-family: "Noto Serif", serif;
+
   margin-bottom: 8px;
   color: #939393;
 }
@@ -1086,6 +1161,7 @@ figure.review-card .author h5 span {
 .form-input {
   width: 90%;
   font-size: 18px;
+  font-family: "Noto Serif", serif;
   font-weight: 400;
   line-height: 1.5;
   padding: 6px;
@@ -1138,6 +1214,7 @@ textarea {
 
 .contact-info-title {
   font-size: 22px;
+  font-family: "Noto Serif", serif;
   font-weight: 600;
   margin-bottom: 10px;
   color: black;
@@ -1153,6 +1230,7 @@ textarea {
 
 .contactme {
   font-size: 18px;
+  font-family: "Noto Serif", serif;
   color: black;
   text-decoration: none;
 }
@@ -1172,6 +1250,7 @@ textarea {
   box-sizing: border-box;
   padding: 0 150px;
   background-color: #efefef;
+  font-family: "Noto Serif", serif;
 }
 
 .footer-container {
