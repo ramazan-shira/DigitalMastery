@@ -27,8 +27,8 @@
     font-size: 30px;
   }
 
-  .trusted-companies{
-   flex-wrap: wrap;
+  .trusted-companies {
+    flex-wrap: wrap;
   }
 }
 
@@ -65,11 +65,11 @@
 
 @media screen and (max-width: 1080px) {
   .main-page-description h1 {
-    font-size: 60px;
+    font-size: 70px;
   }
 
   .main-page-description h4 {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   .about-us-title h2,
@@ -77,8 +77,12 @@
   .instructors-title,
   .testimonials-title,
   .gallery-title h2,
-  .contact-title h2{
+  .contact-title h2 {
     font-size: 42px;
+  }
+
+  .expertise-cards {
+    width: 100%;
   }
 
   .offer-cards,
@@ -126,7 +130,7 @@
     width: 90%;
   }
 
-  .about-us-title h2{
+  .about-us-title h2 {
     font-size: 38px;
   }
 
@@ -245,7 +249,6 @@
 }
 
 @media only screen and (max-width: 767px) {
-
   .offer-cards {
     grid-template-columns: 1fr;
   }
@@ -272,6 +275,10 @@
     padding: 30px 0;
     max-width: 100%;
     align-items: flex-start;
+  }
+
+  .registered-message {
+    flex-direction: column-reverse;
   }
 
   .footer-content {
@@ -308,7 +315,7 @@
   .instructors-title,
   .testimonials-title,
   .gallery-title h2,
-  .contact-title h2{
+  .contact-title h2 {
     font-size: 36px;
   }
 
@@ -362,7 +369,7 @@
   .instructors-title,
   .testimonials-title,
   .gallery-title h2,
-  .contact-title h2{
+  .contact-title h2 {
     font-size: 32px;
   }
 

@@ -195,23 +195,61 @@ course.addEventListener("change", function (e) {
   selectedCourseText = this.options[selectedIndex].text;
 });
 
-var fileInput = document.getElementById("file").req;
+//Input file validation
+// Zgjedhja e elementeve HTML
+const dropArea = document.getElementById("drop-area");
+const fileInput = document.getElementById("file-input");
+const submitBtn = document.getElementById("submit-btn");
 
-function fileValidation() {
-  var filePath = fileInput.value;
-  var allowedExtensions =
-    /(\.doc|\.docx|\.odt|\.pdf|\.tex|\.txt|\.rtf|\.wps|\.wks|\.wpd)$/i;
-  var x = document.getElementById("myFile").required;
+// Ngjarja e lidhur me hover-in dhe drag'n'drop
+["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
+  dropArea.addEventListener(eventName, preventDefaults, false);
+});
 
-  if (!allowedExtensions.exec(filePath)) {
-    fileError.innerText = "Invalid file type";
-    fileInput.value = "";
-    valid = false;
-  } else {
-    valid = true;
-    fileError.innerText = "";
-  }
+function preventDefaults(e) {
+  e.preventDefault();
+  e.stopPropagation();
 }
+
+["dragenter", "dragover"].forEach((eventName) => {
+  dropArea.addEventListener(eventName, highlight, false);
+});
+
+["dragleave", "drop"].forEach((eventName) => {
+  dropArea.addEventListener(eventName, unhighlight, false);
+});
+
+function highlight() {
+  dropArea.classList.add("highlight");
+}
+
+function unhighlight() {
+  dropArea.classList.remove("highlight");
+}
+
+// Ngarkimi i file-it
+dropArea.addEventListener("drop", handleDrop, false);
+
+function handleDrop(e) {
+  const dt = e.dataTransfer;
+  const files = dt.files;
+
+  handleFiles(files);
+}
+
+function handleFiles(files) {
+  [...files].forEach(uploadFile);
+}
+
+// Ngjarja e lidhur me klikimin në drop-area për të zgjedhur file-in
+dropArea.addEventListener("click", () => {
+  fileInput.click();
+});
+
+fileInput.addEventListener("change", () => {
+  const files = fileInput.files;
+  handleFiles(files);
+});
 
 const register = () => {
   if (fullName.value === "") {
@@ -277,9 +315,13 @@ const register = () => {
     courseError.innerText = "";
   }
 
-  //Check if file is uploaded successfully
-  if (fileError.innerText === "") {
+  // Kontrollon nëse është ngarkuar file
+  if (!fileInput.files || fileInput.files.length === 0) {
+    fileError.innerText = "Please upload a file!";
+    valid = false;
+  } else {
     valid = true;
+    fileError.innerText = "";
   }
 
   //Validate knowledge
@@ -337,6 +379,9 @@ const register = () => {
 
   if (valid) {
     registeredMessage.style.display = "flex";
+    const img = document.createElement("img");
+    img.src = "./Assets/Images/congrats.png";
+    registeredMessage.appendChild(img);
     registered.innerText = `Congratulations ${fullName.value}!!You are registered to ${selectedCourseText} course.`;
   }
 };

@@ -1,14 +1,20 @@
 @font-face {
-  font-family: "Platypi", serif;
-  src: url("https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap");
-}
-@font-face {
   font-family: "Lugrasimo", cursive;
-  src: url("https://fonts.googleapis.com/css2?family=Lugrasimo&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap");
+  src: url(./Assets/Fonts/lugrasimo-regular-webfont.woff), format("woff"), url("./Assets/Fonts/lugrasimo-regular-webfont.woff2"), format("woff2");
 }
+
 @font-face {
   font-family: "Noto Serif", serif;
-  src: url("https://fonts.googleapis.com/css2?family=Lugrasimo&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap");
+  src: url("./Assets/Fonts/notoserif-italic-variablefont_wdthwght-webfont.woff"), format("woff"), 
+  url("./Assets/Fonts/notoserif-italic-variablefont_wdthwght-webfont.woff2"), format("woff2"), 
+  url("./Assets/Fonts/notoserif-variablefont_wdthwght-webfont.woff"), format("woff"), url("./Assets/Fonts/notoserif-variablefont_wdthwght-webfont.woff2"), format("woff2");
+}
+
+@font-face {
+  font-family: "Platypi", serif;
+  src: url("./Assets/Fonts/platypi-italic-variablefont_wght-webfont.woff"), format("woff"), 
+  url("./Assets/Fonts/platypi-italic-variablefont_wght-webfont.woff2"), format("woff2"), 
+  url("./Assets/Fonts/platypi-variablefont_wght-webfont.woff"), format("woff"), url("./Assets/Fonts/platypi-variablefont_wght-webfont.woff2"), format("woff2");
 }
 
 * {
@@ -19,6 +25,15 @@
 html,
 body {
   overflow-x: hidden;
+}
+
+body {
+  font-family: "Noto Serif", serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Platypi", serif;
+
 }
 
 /* Navigation bar style */
@@ -47,13 +62,14 @@ header {
 
 .navbar a {
   font-size: 20px;
-  font-family: "Noto Serif", serif;
   text-decoration: none;
   color: black;
   font-weight: 600;
   padding: 10px 22px;
   transition: all 0.4s ease;
   box-sizing: border-box;
+  font-family: "Jacquard 24", system-ui;
+
 }
 
 .navbar a:visited {
@@ -127,7 +143,6 @@ header {
   font-size: 30px;
   margin-top: 5px;
   text-transform: uppercase;
-  font-family: "Platypi", serif;
 }
 
 /* About us style */
@@ -157,7 +172,6 @@ header {
 .about-us-description p {
   font-size: 20px;
   line-height: 1.5;
-  font-family: "Noto Serif", serif;
 }
 
 .about-us-image {
@@ -207,12 +221,13 @@ header {
 .expertise-card-title {
   font-size: 32px;
   font-weight: 600;
+  text-align: center;
 }
 
 .expertise-card-content {
   font-size: 24px;
   font-weight: 500;
-  font-family: "Noto Serif", serif;
+  text-align: center;
 }
 
 .widget {
@@ -228,7 +243,6 @@ header {
   border-top-right-radius: 5px;
   font-weight: 400;
   font-size: 1.5em;
-  font-family: "Noto Serif", serif;
 }
 
 .chart-container {
@@ -290,7 +304,6 @@ header {
 .offer-card-content {
   font-size: 18px;
   line-height: 1.5;
-  font-family: "Noto Serif", serif;
 }
 
 .offer-cards:nth-child(1) {
@@ -368,7 +381,6 @@ header {
 .popular-categories-card p {
   font-size: 18px;
   margin: 10px 0;
-  font-family: "Noto Serif", serif;
 }
 
 /* Courses */
@@ -438,7 +450,6 @@ header {
 
 .course-description {
   padding: 20px;
-  font-family: "Noto Serif", serif;
 }
 
 .course-description h2 {
@@ -448,7 +459,6 @@ header {
   margin: 15px 0 15px;
   transition: all 0.4s ease;
   text-align: center;
-  font-family: "Noto Serif", serif;
 }
 
 .course-description h2:hover {
@@ -474,7 +484,6 @@ header {
   line-height: 30px;
   letter-spacing: 1px;
   margin: 0 0 30px 0;
-  font-family: "Noto Serif", serif;
 }
 
 .course-btn {
@@ -491,7 +500,6 @@ header {
   transition: all 0.4s ease;
   color: #fff;
   background-color: #2ec4b6;
-  font-family: "Noto Serif", serif;
 }
 
 .course-btn a:hover {
@@ -548,7 +556,6 @@ header {
   transition: 0.5s ease;
   padding-left: 50px;
   font-size: 16px;
-  font-family: "Noto Serif", serif;
 }
 
 .input-item .input:focus {
@@ -558,20 +565,17 @@ header {
 .input-label {
   font-size: 18px;
   font-weight: 600;
-  font-family: "Noto Serif", serif;
 }
 
 .gender .gender-title {
   font-size: 18px;
   font-weight: 600;
-  font-family: "Noto Serif", serif;
 
   margin: 0;
 }
 
 .input .knowledge-title {
   font-size: 18px;
-  font-family: "Noto Serif", serif;
 
   font-weight: 600;
   margin: 0;
@@ -589,7 +593,6 @@ header {
 
 .gender .input-item label {
   font-size: 18px;
-  font-family: "Noto Serif", serif;
 }
 
 .gender .input-item label input[type="radio"] {
@@ -617,7 +620,22 @@ header {
   padding: 12px 20px;
   transition: 0.5s ease;
   font-size: 16px;
-  font-family: "Noto Serif", serif;
+}
+
+.drop-area {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.drop-text {
+  font-size: 18px;
+  color: #666;
+}
+
+.file-input {
+  display: none;
 }
 
 .input .coding {
@@ -629,7 +647,6 @@ header {
 
 .input .coding label {
   font-size: 18px;
-  font-family: "Noto Serif", serif;
 }
 
 .input .coding input[type="checkbox"] {
@@ -640,14 +657,13 @@ header {
 .buttons {
   display: flex;
   gap: 30px;
+  margin-bottom: 40px;
 }
 
 .buttons .register {
   padding: 15px 30px;
   border-radius: 10px;
   font-size: 18px;
-  font-family: "Noto Serif", serif;
-
   font-weight: 600;
   background-color: #457b9d;
   color: white;
@@ -675,7 +691,8 @@ header {
 }
 
 .input .input-item span,
-.input span {
+.input span,
+#file-error {
   font-size: 14px;
   color: red;
 }
@@ -684,6 +701,7 @@ header {
   display: none;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   background-color: #c7f9cc;
   box-sizing: border-box;
   padding: 30px;
@@ -691,12 +709,15 @@ header {
   height: auto;
 }
 
+.registered-message img {
+  width: 150px;
+  height: 150px;
+}
+
 .registered-message p {
   width: auto;
   height: auto;
   font-size: 26px;
-  font-family: "Noto Serif", serif;
-
   font-weight: 500;
   margin: 0;
 }
@@ -712,7 +733,6 @@ header {
 .instructors-title {
   font-size: 48px;
   font-weight: 600;
-  font-family: "Noto Serif", serif;
   text-align: center;
 }
 
@@ -873,21 +893,18 @@ header {
 .join-content p {
   font-size: 20px;
   font-weight: 500;
-  font-family: "Noto Serif", serif;
   line-height: 30px;
   margin: 0 0 30px 0;
 }
 
 .join-content h4 {
   font-size: 20px;
-  font-family: "Noto Serif", serif;
 
   margin: 0 0 10px 0;
 }
 
 .join-content h5 {
   font-size: 20px;
-  font-family: "Noto Serif", serif;
   margin: 0 0 40px 0;
 }
 
@@ -900,7 +917,6 @@ header {
   padding: 16px 30px;
   text-decoration: none;
   font-weight: 700;
-  font-family: "Noto Serif", serif;
   border-radius: 30px;
   transition: all 0.4s ease;
   color: #fff;
@@ -943,7 +959,7 @@ header {
 .trusted-companies img {
   height: 70px;
   width: auto;
-  transition: all 0.4 ease;
+  transition: all 0.4s ease;
   margin: 0 30px;
 }
 
@@ -976,7 +992,6 @@ header {
 }
 
 figure.review-card {
-  font-family: "Raleway", Arial, sans-serif;
   position: relative;
   overflow: hidden;
   margin: 10px;
@@ -1062,8 +1077,6 @@ figure.review-card .author {
 
 figure.review-card .author h5 {
   font-size: 15px;
-  font-family: "Noto Serif", serif;
-
   opacity: 0.8;
   margin: 0;
   font-weight: 800;
@@ -1071,8 +1084,6 @@ figure.review-card .author h5 {
 
 figure.review-card .author h5 span {
   font-weight: 400;
-  font-family: "Noto Serif", serif;
-
   text-transform: none;
   padding-left: 5px;
 }
@@ -1152,8 +1163,6 @@ figure.review-card .author h5 span {
 
 .contact-form label {
   font-size: 18px;
-  font-family: "Noto Serif", serif;
-
   margin-bottom: 8px;
   color: #939393;
 }
@@ -1161,8 +1170,7 @@ figure.review-card .author h5 span {
 .form-input {
   width: 90%;
   font-size: 18px;
-  font-family: "Noto Serif", serif;
-  font-weight: 400;
+    font-weight: 400;
   line-height: 1.5;
   padding: 6px;
   border: none;
@@ -1214,7 +1222,6 @@ textarea {
 
 .contact-info-title {
   font-size: 22px;
-  font-family: "Noto Serif", serif;
   font-weight: 600;
   margin-bottom: 10px;
   color: black;
@@ -1230,7 +1237,6 @@ textarea {
 
 .contactme {
   font-size: 18px;
-  font-family: "Noto Serif", serif;
   color: black;
   text-decoration: none;
 }
@@ -1250,7 +1256,6 @@ textarea {
   box-sizing: border-box;
   padding: 0 150px;
   background-color: #efefef;
-  font-family: "Noto Serif", serif;
 }
 
 .footer-container {
