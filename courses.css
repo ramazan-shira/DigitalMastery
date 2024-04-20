@@ -1,10 +1,15 @@
 @font-face {
-  font-family: "Noto Serif", serif;
-  src: url("https://fonts.googleapis.com/css2?family=Lugrasimo&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap");
+  font-family: "Noto Serif";
+  src: url("./Assets/Fonts/NotoSerif-VariableFont_wdth\,wght.ttf"),
+    url("./Assets/Fonts/NotoSerif-Italic-VariableFont_wdth\,wght.ttf"),
+    url("./Assets/Fonts/notoserif-italic-variablefont_wdthwght-webfont.woff");
+  font-style: normal;
 }
+
 @font-face {
-  font-family: "Platypi", serif;
-  src: url("https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap");
+  font-family: "Platypi";
+  src: url("./Assets/Fonts/Platypi-VariableFont_wght.ttf"),
+    url("./Assets/Fonts/Platypi-Italic-VariableFont_wght.ttf");
 }
 * {
   margin: 0;
