@@ -1,13 +1,13 @@
 @font-face {
   font-family: "Lugrasimo";
-  src: url("./Assets/Fonts/Lugrasimo-Regular.ttf");
+  src: url("../Assets/Fonts/Lugrasimo-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Noto Serif";
-  src: url("./Assets/Fonts/NotoSerif-VariableFont_wdth\,wght.ttf"),
+  src: url("../Assets/Fonts/NotoSerif-VariableFont_wdth\,wght.ttf"),
     url("./Assets/Fonts/NotoSerif-Italic-VariableFont_wdth\,wght.ttf"),
     url("./Assets/Fonts/notoserif-italic-variablefont_wdthwght-webfont.woff");
   font-style: normal;
@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: "Platypi";
-  src: url("./Assets/Fonts/Platypi-VariableFont_wght.ttf"),
+  src: url("../Assets/Fonts/Platypi-VariableFont_wght.ttf"),
     url("./Assets/Fonts/Platypi-Italic-VariableFont_wght.ttf");
 }
 

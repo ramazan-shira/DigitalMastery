@@ -19,6 +19,8 @@ const submit = () => {
   } else if (lname.length < 3) {
     alert("Last name should contain at least 3 characters");
   } else {
-    contactMessage.innerText = `Hello ${fname} ${lname}, we have received your message. Thank you for reaching out to us.`;
+    var messageContact = document.createElement("p");
+    messageContact.innerHTML = `Hello ${fname} ${lname}, we have received your message. Thank you for reaching out to us.`;
+    contactMessage.appendChild(messageContact);
   }
 };
