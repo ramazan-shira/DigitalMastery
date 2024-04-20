@@ -1225,6 +1225,20 @@ textarea {
   background-color: #0582ca;
 }
 
+.contact-message {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #c7f9cc;
+  box-sizing: border-box;
+  padding: 30px;
+  width: auto;
+  height: auto;
+  font-size: 26px;
+  font-weight: 500;
+}
+
 .contact-info-title {
   font-size: 22px;
   font-weight: 600;
