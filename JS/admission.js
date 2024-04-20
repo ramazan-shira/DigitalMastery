@@ -1,153 +1,12 @@
-let menu = document.getElementById("menu-icon");
-let navbar = document.querySelector(".navbar");
-
-const showNav = () => {
-  console.log("here");
-
-  navbar.classList.toggle("open");
-};
-
-window.onscroll = () => {
-  menu.classList.remove("bx-x");
-  navbar.classList.remove("open");
-};
-
-//Chart
-var dataset = [
-  { name: "Programming", percent: 34.1 },
-  { name: "Cyber Security", percent: 27.7 },
-  { name: "Design", percent: 24.5 },
-  { name: "Digital marketing", percent: 13.7 },
-];
-
-var pie = d3.layout
-  .pie()
-  .value(function (d) {
-    return d.percent;
-  })
-  .sort(null)
-  .padAngle(0.03);
-
-var w = 250,
-  h = 250;
-
-var outerRadius = w / 2;
-var innerRadius = 80;
-
-var color = d3.scale.category10();
-
-var arc = d3.svg.arc().outerRadius(outerRadius).innerRadius(innerRadius);
-
-var svg = d3
-  .select("#chart")
-  .append("svg")
-  .attr({
-    width: w,
-    height: h,
-    class: "shadow",
-  })
-  .append("g")
-  .attr({
-    transform: "translate(" + w / 2 + "," + h / 2 + ")",
-  });
-var path = svg
-  .selectAll("path")
-  .data(pie(dataset))
-  .enter()
-  .append("path")
-  .attr({
-    d: arc,
-    fill: function (d, i) {
-      return color(d.data.name);
-    },
-  });
-
-path
-  .transition()
-  .duration(1000)
-  .attrTween("d", function (d) {
-    var interpolate = d3.interpolate({ startAngle: 0, endAngle: 0 }, d);
-    return function (t) {
-      return arc(interpolate(t));
-    };
-  });
-
-var restOfTheData = function () {
-  var text = svg
-    .selectAll("text")
-    .data(pie(dataset))
-    .enter()
-    .append("text")
-    .transition()
-    .duration(200)
-    .attr("transform", function (d) {
-      return "translate(" + arc.centroid(d) + ")";
-    })
-    .attr("dy", ".2em")
-    .attr("text-anchor", "middle")
-    .text(function (d) {
-      return d.data.percent + "%";
-    })
-    .style({
-      fill: "#fff",
-      "font-size": "10px",
-    });
-
-  var legendRectSize = 20;
-  var legendSpacing = 7;
-  var legendHeight = legendRectSize + legendSpacing;
-
-  var legend = svg
-    .selectAll(".legend")
-    .data(color.domain())
-    .enter()
-    .append("g")
-    .attr({
-      class: "legend",
-      transform: function (d, i) {
-        //Just a calculation for x & y position
-        return "translate(-35," + (i * legendHeight - 65) + ")";
-      },
-    });
-  legend
-    .append("rect")
-    .attr({
-      width: legendRectSize,
-      height: legendRectSize,
-      rx: 20,
-      ry: 20,
-    })
-    .style({
-      fill: color,
-      stroke: color,
-    });
-
-  legend
-    .append("text")
-    .attr({
-      x: 20,
-      y: 15,
-    })
-    .text(function (d) {
-      return d;
-    })
-    .style({
-      fill: "#237",
-      "font-size": "12px",
-    });
-};
-
-setTimeout(restOfTheData, 1000);
-
 // Admission form validation
+//Take all input fields and store them in variables to validate
 var fullName = document.getElementById("full-name");
 var emailAddress = document.getElementById("email-address");
 var phone = document.getElementById("phone");
 
+// Use of arrays to store same type input fields, in this case gender radio buttons
 var gender = document.querySelectorAll('.input.gender input[type="radio"]');
 
-var female = document.getElementById("female");
-var male = document.getElementById("male");
 var course = document.getElementById("course");
 var selectedCourse = course.selectedIndex;
 var selectedCourseValue = course.options[selectedCourse].value;
@@ -160,6 +19,8 @@ var knowledge = document.querySelectorAll(
 var password = document.getElementById("password");
 var confirmPassword = document.getElementById("confirm-password");
 
+// When any of the fields is not filled correctly, we use a span to show the error message
+// This would be done by using an array and storing the error message in the array, but using that would be difficult to validate all conditions(length, characters permitted, etc...)
 var nameError = document.getElementById("name-error");
 var emailError = document.getElementById("email-error");
 var phoneError = document.getElementById("phone-error");
@@ -175,6 +36,7 @@ var confPassError = document.getElementById("conf-pass-error");
 var registeredMessage = document.getElementById("registered-message");
 var registered = document.getElementById("registered");
 
+// To validate input fields, we use regular expressions
 const fullNameLengthRegex = /^.{3,}\s.{3,}$/;
 const fullNameCharacterRegex = /^[a-zA-Z]+\s[a-zA-Z]+$/;
 const regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -186,6 +48,8 @@ const regPassSpecialchar = /.*[!@#$%^&*()\-_=+{};:,<.>].*/;
 const regPassLength = /.{8,}/;
 
 const clearBtn = document.getElementById("clear");
+
+//We use a boolean variable that indicates whether the fields are filled correctly.In the end, if the value is true, the success message is displayes
 var valid = true;
 
 //Validate course
@@ -196,12 +60,11 @@ course.addEventListener("change", function (e) {
 });
 
 //Input file validation
-// Zgjedhja e elementeve HTML
 const dropArea = document.getElementById("drop-area");
 const fileInput = document.getElementById("file-input");
 const submitBtn = document.getElementById("submit-btn");
 
-// Ngjarja e lidhur me hover-in dhe drag'n'drop
+// Adding events for drag and drop areas
 ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
   dropArea.addEventListener(eventName, preventDefaults, false);
 });
@@ -227,7 +90,7 @@ function unhighlight() {
   dropArea.classList.remove("highlight");
 }
 
-// Ngarkimi i file-it
+// File upload
 dropArea.addEventListener("drop", handleDrop, false);
 
 function handleDrop(e) {
@@ -240,8 +103,6 @@ function handleDrop(e) {
 function handleFiles(files) {
   [...files].forEach(uploadFile);
 }
-
-// Ngjarja e lidhur me klikimin në drop-area për të zgjedhur file-in
 dropArea.addEventListener("click", () => {
   fileInput.click();
 });
@@ -251,7 +112,9 @@ fileInput.addEventListener("change", () => {
   handleFiles(files);
 });
 
+// Validation function for form submission
 const register = () => {
+  // Validate full name
   if (fullName.value === "") {
     nameError.innerText = "Please enter your full name!";
     valid = false;
@@ -315,7 +178,7 @@ const register = () => {
     courseError.innerText = "";
   }
 
-  // Kontrollon nëse është ngarkuar file
+  // File upload validation
   if (!fileInput.files || fileInput.files.length === 0) {
     fileError.innerText = "Please upload a file!";
     valid = false;
@@ -377,6 +240,7 @@ const register = () => {
     confPassError.innerText = "";
   }
 
+  //Check if the fields are filled correctly
   if (valid) {
     registeredMessage.style.display = "flex";
     const img = document.createElement("img");
@@ -386,6 +250,7 @@ const register = () => {
   }
 };
 
+//Clear button
 clearBtn.addEventListener("click", function (e) {
   fullName.value = "";
   emailAddress.value = "";
@@ -393,7 +258,6 @@ clearBtn.addEventListener("click", function (e) {
   female.checked = false;
   male.checked = false;
   course.selectedIndex = 0;
-  // fileInput.value = "";
   java.checked = false;
   net.checked = false;
   javascript.checked = false;
@@ -410,29 +274,3 @@ clearBtn.addEventListener("click", function (e) {
   passError.innerText = "";
   confPassError.innerText = "";
 });
-
-// Constact us validation
-const submit = () => {
-  const fname = document.getElementById("fname").value.trim();
-  const lname = document.getElementById("lname").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const email = document.getElementById("email").value.trim();
-
-  const regEx = /^[a-zA-Z]+$/;
-
-  if (fname === "" || lname === "" || email === "" || message === "") {
-    alert("Please fill out all fileds");
-  } else if (!regEx.test(fname)) {
-    alert("First name should contain only letters!");
-  } else if (fname.length < 3) {
-    alert("First name should contain at least 3 characters");
-  } else if (!regEx.test(lname)) {
-    alert("Last name should contain only letters!");
-  } else if (lname.length < 3) {
-    alert("Last name should contain at least 3 characters");
-  } else {
-    alert(
-      `Hello ${fname} ${lname}, we have received your message. Thank you for reaching out to us.`
-    );
-  }
-};

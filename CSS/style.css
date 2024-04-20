@@ -1,20 +1,22 @@
 @font-face {
-  font-family: "Lugrasimo", cursive;
-  src: url(./Assets/Fonts/lugrasimo-regular-webfont.woff), format("woff"), url("./Assets/Fonts/lugrasimo-regular-webfont.woff2"), format("woff2");
+  font-family: "Lugrasimo";
+  src: url("./Assets/Fonts/Lugrasimo-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Noto Serif", serif;
-  src: url("./Assets/Fonts/notoserif-italic-variablefont_wdthwght-webfont.woff"), format("woff"), 
-  url("./Assets/Fonts/notoserif-italic-variablefont_wdthwght-webfont.woff2"), format("woff2"), 
-  url("./Assets/Fonts/notoserif-variablefont_wdthwght-webfont.woff"), format("woff"), url("./Assets/Fonts/notoserif-variablefont_wdthwght-webfont.woff2"), format("woff2");
+  font-family: "Noto Serif";
+  src: url("./Assets/Fonts/NotoSerif-VariableFont_wdth\,wght.ttf"),
+    url("./Assets/Fonts/NotoSerif-Italic-VariableFont_wdth\,wght.ttf"),
+    url("./Assets/Fonts/notoserif-italic-variablefont_wdthwght-webfont.woff");
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Platypi", serif;
-  src: url("./Assets/Fonts/platypi-italic-variablefont_wght-webfont.woff"), format("woff"), 
-  url("./Assets/Fonts/platypi-italic-variablefont_wght-webfont.woff2"), format("woff2"), 
-  url("./Assets/Fonts/platypi-variablefont_wght-webfont.woff"), format("woff"), url("./Assets/Fonts/platypi-variablefont_wght-webfont.woff2"), format("woff2");
+  font-family: "Platypi";
+  src: url("./Assets/Fonts/Platypi-VariableFont_wght.ttf"),
+    url("./Assets/Fonts/Platypi-Italic-VariableFont_wght.ttf");
 }
 
 * {
@@ -31,9 +33,13 @@ body {
   font-family: "Noto Serif", serif;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Platypi", serif;
-
 }
 
 /* Navigation bar style */
@@ -69,7 +75,6 @@ header {
   transition: all 0.4s ease;
   box-sizing: border-box;
   font-family: "Jacquard 24", system-ui;
-
 }
 
 .navbar a:visited {
@@ -102,7 +107,7 @@ header {
 
 /* Main page style */
 .main-page {
-  background-image: url("./Assets/Images/main-page.jpg");
+  background-image: url("../Assets/Images/main-page.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -1170,7 +1175,7 @@ figure.review-card .author h5 span {
 .form-input {
   width: 90%;
   font-size: 18px;
-    font-weight: 400;
+  font-weight: 400;
   line-height: 1.5;
   padding: 6px;
   border: none;
