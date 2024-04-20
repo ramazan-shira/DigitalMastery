@@ -36,6 +36,9 @@
   header {
     padding: 0 130px;
   }
+  .main-page-description h1 {
+    font-size: 65px;
+  }
 
   .about-container,
   .expertise,
@@ -64,10 +67,6 @@
 }
 
 @media screen and (max-width: 1080px) {
-  .main-page-description h1 {
-    font-size: 70px;
-  }
-
   .main-page-description h4 {
     font-size: 30px;
   }

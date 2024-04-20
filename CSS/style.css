@@ -74,7 +74,6 @@ header {
   padding: 10px 22px;
   transition: all 0.4s ease;
   box-sizing: border-box;
-  font-family: "Jacquard 24", system-ui;
 }
 
 .navbar a:visited {
@@ -137,7 +136,7 @@ header {
 }
 
 .main-page-description h1 {
-  font-size: 80px;
+  font-size: 70px;
   margin-bottom: 5px;
   text-transform: uppercase;
   line-height: 1.8;
@@ -1239,6 +1238,14 @@ textarea {
   font-weight: 500;
 }
 
+#error-fname,
+#error-lname,
+#error-email,
+#error-message {
+  color: red;
+  font-size: 14px;
+}
+
 .contact-info-title {
   font-size: 22px;
   font-weight: 600;
@@ -1274,7 +1281,7 @@ textarea {
 .footer {
   box-sizing: border-box;
   padding: 0 150px;
-  background-color: #efefef;
+  background-color: #f4f4f9;
 }
 
 .footer-container {

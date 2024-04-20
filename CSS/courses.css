@@ -319,7 +319,7 @@ header {
 .header {
   height: 50px;
   width: 420px;
-  background: #caf0f8;
+  background: #ecf8f8;
   text-align: center;
   position: relative;
   z-index: 100;
@@ -333,7 +333,7 @@ header {
   font-weight: 500;
   font-family: "Noto Serif", serif;
   letter-spacing: 1px;
-  color: #0096c7;
+  color: #33658a;
 }
 
 .left,
@@ -349,13 +349,13 @@ header {
 
 .left {
   border-width: 7.5px 10px 7.5px 0;
-  border-color: transparent #0096c7 transparent transparent;
+  border-color: transparent #33658a transparent transparent;
   left: 20px;
 }
 
 .right {
   border-width: 7.5px 0 7.5px 10px;
-  border-color: transparent transparent transparent #0096c7;
+  border-color: transparent transparent transparent #33658a;
   right: 20px;
 }
 
@@ -397,7 +397,7 @@ header {
 }
 
 .week {
-  background: #caf0f8;
+  background: #f6fff8;
 }
 
 .day {
@@ -407,14 +407,14 @@ header {
   text-align: center;
   vertical-align: top;
   cursor: pointer;
-  background: #caf0f8;
-  color: #0077b6;
+  background: #f6fff8;
+  color: #023047;
   position: relative;
   z-index: 100;
 }
 
 .day.other {
-  color: #0077b6;
+  color: #023047;
 }
 
 .day.today {
@@ -422,8 +422,8 @@ header {
 }
 
 .day-name {
-  font-size: 9px;
-  font-family: "Noto Serif", serif;
+  font-size: 10px;
+  font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 5px;
   color: #003554;
@@ -432,9 +432,9 @@ header {
 
 .day-number {
   font-size: 24px;
-  font-family: "Noto Serif", serif;
+  font-weight: 500;
   letter-spacing: 1.5px;
-  color: #004e98;
+  color: #118ab2;
 }
 
 .day .day-events {
@@ -474,10 +474,11 @@ header {
   position: relative;
   width: 420px;
   height: 75px;
-  background: #59a5d8;
+  background: #2196f3;
   margin-top: 5px;
   border-radius: 4px;
-  color: white;
+  color: #fff;
+  font-weight: 500;
 }
 
 .details.in {
@@ -501,7 +502,7 @@ header {
   height: 0px;
   border-style: solid;
   border-width: 0 5px 5px 5px;
-  border-color: transparent transparent #59a5d8 transparent;
+  border-color: transparent transparent #2196f3 transparent;
   transition: all 0.7s ease;
 }
 
@@ -516,7 +517,7 @@ header {
   -webkit-animation: fadeIn 0.3s ease both;
   -moz-animation: fadeIn 0.3s ease both;
   animation: fadeIn 0.3s ease both;
-  background-color: #59a5d8;
+  background-color: #2196f3;
 }
 
 .events.in {
@@ -567,8 +568,8 @@ header {
   bottom: 0;
   width: 100%;
   height: 30px;
-  background: #ade8f4;
-  color: #004e98;
+  background: #bbdefb;
+  color: #2196f3;
   line-height: 30px;
 }
 
@@ -783,7 +784,7 @@ header {
 .footer {
   box-sizing: border-box;
   padding: 0 150px;
-  background-color: #efefef;
+  background-color: #f4f4f9;
 }
 
 .footer-container {
