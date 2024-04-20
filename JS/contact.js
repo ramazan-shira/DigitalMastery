@@ -12,6 +12,8 @@ const submit = () => {
   const errorMessage = document.getElementById("error-message");
 
   const regEx = /^[a-zA-Z]+$/;
+  const regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
   var valid = true;
 
   if (!fname) {
@@ -23,7 +25,7 @@ const submit = () => {
   } else if (regEx.test(fname)) {
     errorFname.innerText = "Last name  must contain only letters!";
     valid = false;
-  } else{
+  } else {
     valid = true;
     errorFname.innerText = "";
   }
@@ -37,13 +39,36 @@ const submit = () => {
   } else if (regEx.test(fname)) {
     errorLname.innerText = "Last name  must contain only letters!";
     valid = false;
-  } else{
+  } else {
     valid = true;
     errorLname.innerText = "";
   }
 
-
+  //Validate email address
+  if (email.value === "") {
+    errorEmail.innerText = "Please enter your email address!";
+    valid = false;
+  } else if (!regEmail.test(email.value)) {
+    errorEmail.innerText = "Invalid email address!";
+    valid = false;
   } else {
+    valid = true;
+    errorEmail.innerText = "";
+  }
+
+  // Validate message
+  if (!message) {
+    errorMessage.innerText = "Please enter your message";
+    valid = false;
+  } else if (message.length < 10) {
+    errorMessage.innerText = "Message must be at least 10 characters";
+    valid = false;
+  } else {
+    valid = true;
+    errorMessage.innerText = "";
+  }
+
+  if (valid) {
     var messageContact = document.createElement("p");
     messageContact.innerHTML = `Hello ${fname} ${lname}, we have received your message. Thank you for reaching out to us.`;
     contactMessage.appendChild(messageContact);
