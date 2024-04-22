@@ -12,6 +12,7 @@ var selectedCourse = course.selectedIndex;
 var selectedCourseValue = course.options[selectedCourse].value;
 var selectedCourseText = course.options[selectedCourse].text;
 
+// Use of arrays to store same type input fields, in this case for modules
 var knowledge = document.querySelectorAll(
   '.input-item.coding input[type="checkbox"]'
 );
@@ -258,10 +259,7 @@ clearBtn.addEventListener("click", function (e) {
   female.checked = false;
   male.checked = false;
   course.selectedIndex = 0;
-  java.checked = false;
-  net.checked = false;
-  javascript.checked = false;
-  react.checked = false;
+  knowledge.checked = false;
   password.value = "";
   confirmPassword.value = "";
   nameError.innerText = "";

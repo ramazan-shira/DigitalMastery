@@ -14,7 +14,7 @@ const submit = () => {
   const errorMessage = document.getElementById("error-message");
 
   // Regular expressions to validate first name, last name and email
-  const regExName = /^[a-zA-Z]+\s[a-zA-Z]+$/;
+  const regExName = /^[a-zA-Z]+$/;
   const regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   //We use a boolean variable that indicates whether the fields are filled correctly.In the end, if the value is true, the success message is displayes
