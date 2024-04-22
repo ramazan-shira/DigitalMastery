@@ -39,7 +39,7 @@ var registered = document.getElementById("registered");
 // To validate input fields, we use regular expressions
 const fullNameLengthRegex = /^.{3,}\s.{3,}$/;
 const fullNameCharacterRegex = /^[a-zA-Z]+\s[a-zA-Z]+$/;
-const regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const regPhone = /^\d{3}-\d{7}$/;
 const regPassUppercase = /.*[A-Z].*/;
 const regPassLowercase = /.*[a-z].*/;
@@ -207,6 +207,9 @@ const register = () => {
   if (password.value === "") {
     passError.innerText = "Please enter your password!";
     valid = false;
+  } else if (!regPassLength.test(password.value)) {
+    passError.innerText = "Password must contain at least 8 characters";
+    valid = false;
   } else if (!regPassUppercase.test(password.value)) {
     passError.innerText = "Password must contain at least one uppercase letter";
     valid = false;
@@ -219,9 +222,6 @@ const register = () => {
   } else if (!regPassSpecialchar.test(password.value)) {
     passError.innerText =
       "Password must contain at least one special character";
-    valid = false;
-  } else if (!regPassLength.test(password.value)) {
-    passError.innerText = "Password must contain at least 8 characters";
     valid = false;
   } else {
     valid = true;
