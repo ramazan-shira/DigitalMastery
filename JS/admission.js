@@ -12,6 +12,9 @@ var selectedCourse = course.selectedIndex;
 var selectedCourseValue = course.options[selectedCourse].value;
 var selectedCourseText = course.options[selectedCourse].text;
 
+var fileInput = document.getElementById("file-input");
+
+
 // Use of arrays to store same type input fields, in this case for modules
 var knowledge = document.querySelectorAll(
   '.input-item.coding input[type="checkbox"]'
@@ -60,58 +63,6 @@ course.addEventListener("change", function (e) {
   selectedCourseText = this.options[selectedIndex].text;
 });
 
-//Input file validation
-const dropArea = document.getElementById("drop-area");
-const fileInput = document.getElementById("file-input");
-const submitBtn = document.getElementById("submit-btn");
-
-// Adding events for drag and drop areas
-["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
-  dropArea.addEventListener(eventName, preventDefaults, false);
-});
-
-function preventDefaults(e) {
-  e.preventDefault();
-  e.stopPropagation();
-}
-
-["dragenter", "dragover"].forEach((eventName) => {
-  dropArea.addEventListener(eventName, highlight, false);
-});
-
-["dragleave", "drop"].forEach((eventName) => {
-  dropArea.addEventListener(eventName, unhighlight, false);
-});
-
-function highlight() {
-  dropArea.classList.add("highlight");
-}
-
-function unhighlight() {
-  dropArea.classList.remove("highlight");
-}
-
-// File upload
-dropArea.addEventListener("drop", handleDrop, false);
-
-function handleDrop(e) {
-  const dt = e.dataTransfer;
-  const files = dt.files;
-
-  handleFiles(files);
-}
-
-function handleFiles(files) {
-  [...files].forEach(uploadFile);
-}
-dropArea.addEventListener("click", () => {
-  fileInput.click();
-});
-
-fileInput.addEventListener("change", () => {
-  const files = fileInput.files;
-  handleFiles(files);
-});
 
 // Validation function for form submission
 const register = () => {
@@ -180,19 +131,25 @@ const register = () => {
   }
 
   // File upload validation
-  if (!fileInput.files || fileInput.files.length === 0) {
-    fileError.innerText = "Please upload a file!";
-    valid = false;
+  if (fileInput.files.length === 0) {
+    fileError.innerText = "Please upload your CV";
   } else {
-    valid = true;
-    fileError.innerText = "";
+    var file = fileInput.files[0];
+    var fileType = file.type;
+    if (
+      fileType !== "application/pdf" &&
+      fileType !==
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    ) {
+      fileError.innerText = "Invalid file type, .pdf or .docx allowed!";
+    }
   }
 
   //Validate knowledge
   var anyCheckboxChecked = false;
   for (var i = 0; i < knowledge.length; i++) {
     if (knowledge[i].checked) {
-      anyCheckboxChecked = true; // Një checkbox është zgjedhur
+      anyCheckboxChecked = true;
     }
   }
 
